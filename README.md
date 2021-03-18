@@ -26,17 +26,17 @@
 
 
 ### Rancher
-   Now that we have an OS we have a couple of options for Rancher.
+    Now that we have an OS we have a couple of options for Rancher.
 
-   Rancher normally runs on top of Kubernetes. You pick any of our Kubernetes (RKE, RKE2 or K3s) and then install Rancher via helm.  
+    Rancher normally runs on top of Kubernetes. You pick any of our Kubernetes (RKE, RKE2 or K3s) and then install Rancher via helm.  
 
-   In a production world, we would <a href="install/InstallRKEonSLES15x86_64.md">install RKE on top SLES</a> and then follow the instructions for installing <a href="install/InstallRancher-Helm.md">Rancher using helm to install Rancher on k8s</a>
+- In a production world, we would <a href="install/InstallRKEonSLES15x86_64.md">install RKE on top SLES</a> and then follow the instructions for installing <a href="install/InstallRancher-Helm.md">Rancher using helm to install Rancher on k8s</a>
 
-   Since this is just a system at home we could run the might lighter version of Kubernetes by <a href="install/InstallK3s.md">Installing K3s</a> and then follow the instructions for installing <a href="install/InstallRancher-Helm.
+- Since this is just a system at home we could run the might lighter version of Kubernetes by <a href="install/InstallK3s.md">Installing K3s</a> and then follow the instructions for installing <a href="install/InstallRancher-Helm.
 
-   You could also just run Rancher as a Service under linux by following the <a href="install/InstallRancher-Rancherd.md">Quick install of Rancher on RKE2 using Rancherd</a>
+- You could also just run Rancher as a Service under linux by following the <a href="install/InstallRancher-Rancherd.md">Quick install of Rancher on RKE2 using Rancherd</a>
 
-   Or you could just run Rancher under docker by following <a href="install/InstallRancher-Docker.md">Quick install of Rancher using docker</a>
+- Or you could just run Rancher under docker by following <a href="install/InstallRancher-Docker.md">Quick install of Rancher using docker</a>
 
 - Rancher
   - <a href="install/InstallRancher-Docker.md">Quick install of Rancher using docker</a>
@@ -51,24 +51,24 @@
   - <a href="install/InstallRKE2onSLE.md">Install RKE2 (RKE government) on SLES15 SP2 x86_64</a>
 - K3s - Lightwight w/ batteries 
   - <a href="install/InstallK3s.md">Install K3s</a>
-- <a href="install/Lab-LocalStorage">Configure local storage (K3s)</a>
 
 ## Configuration 
 
 ### Networking
 
-    MetalLb - LoadBalancer - Allows you to assign a group of local IP addresses to be used by Applications running unser Kubernetes
-     <a href="install/InstallMetalLB.md">
+   <a href="install/InstallMetalLB.md">Configure MetalLB</a> - LoadBalancer that allows you to assign a group of local IP addresses to be used by Applications running unser Kubernetes
 
 ### Storage 
 
-    Longhorn
-    Mounting NFS in a 
+Longhorn
+<a href="install/Lab-LocalStorage">Configure local storage (K3s)</a>
+
+Mounting NFS in a Deployment
 
 ## Deployments
 
-    Pi-hole
-    MQTT
-    NodRed
+Pi-hole  
+MQTT 
+NodRed
 
 
