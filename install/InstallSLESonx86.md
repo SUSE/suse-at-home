@@ -20,18 +20,18 @@ Obtain media and registration key from <a href="https://scc.suse.com/admin/produ
 
 Select the 'Show Download Information" link
 
-<img src="assets/Core-Lab-1-Show-Download.png">
+<img src="../assets/Core-Lab-1-Show-Download.png">
 
 Then scroll down to the media you wish to use (Full or Online)
 Be sure to choose the latest update (QU1 currently)
-<img src="assets/Core-Lab-1-Download-QU1.png">
+<img src="../assets/Core-Lab-1-Download-QU1.png">
 
 Copy your Registration code to the clipboard...if you don't see one...
-<img src="assets/Core-Lab-1-SLES-Registration-code.png">
+<img src="../assets/Core-Lab-1-SLES-Registration-code.png">
 
 if you don't see a Registration Code...click the Generate Registration code link
 
-<img src="assets/Core-Lab-1-SLES-Registration-Gen-code.png">
+<img src="../assets/Core-Lab-1-SLES-Registration-Gen-code.png">
 
 #### Install SLES
 
@@ -41,7 +41,7 @@ Boot off of iso
 
 Select Install SUSE Linux Enterprise Server 15 SP2
 
-<img src ="assets/Core-Lab-1-install-1-language.png">
+<img src ="../assets/Core-Lab-1-install-1-language.png">
 
 Accept the License
 
@@ -51,25 +51,25 @@ Accept additional update repositories from the Registration Server
 
 Select Containers Module 15 SP2 x86_64
 
-<img src="assets/Core-Lab-1-install-4-selsect-containers-module.png">
+<img src="../assets/Core-Lab-1-install-4-selsect-containers-module.png">
 
 Skip selecting Add on Products
 
 System Role - Select Minimal
 
-<img src="assets/Core-Lab-1-install-5-minimal-install.png">
+<img src="../assets/Core-Lab-1-install-5-minimal-install.png">
 
 Partitioning -> Select Expert -> Start with Current Proposal
 
-<img src="assets/Core-Lab-1-install-6-Partitioning-Select-Expert.png">
+<img src="../assets/Core-Lab-1-install-6-Partitioning-Select-Expert.png">
 
 Partitioning screen is below
 
-<img src="assets/Core-Lab-1-install-6-Partitioning.png">
+<img src="../assets/Core-Lab-1-install-6-Partitioning.png">
 
 Resize / to take the rest of available space
 
-<img src="assets/Core-Lab-1-Install-Resize.png">
+<img src="../assets/Core-Lab-1-Install-Resize.png">
 
 - Accept Partitioning
 - Select your Timezone and Region
@@ -79,13 +79,13 @@ Resize / to take the rest of available space
 
 Check the box for 'Use this password for the system administrator'
 
-<img src="assets/Core-Lab-1-install-7-Local_User.png">
+<img src="../assets/Core-Lab-1-install-7-Local_User.png">
 
 Installation Settings
 - Disable Firewall under Security
 - Disable Kdump
 
-<img src="assets/Core-Lab-1-install-8-Install-Settings.png">
+<img src="../assets/Core-Lab-1-install-8-Install-Settings.png">
 
 Finish Install by Clicking Install
 
