@@ -17,8 +17,8 @@
 ### SLES Install
     Pick a one of the methods below to install SLES
 
-- Installation of SLES15 SP2 on <a href="install/InstallSLESonx86.md"> x86_64</a>
-- Installation of SLES15 SP2 on Raspberry Pi <a href="install/InstallSLESonRPi.md">aarch64</a>
+- <a href="install/InstallSLESonx86.md">Installation of SLES15 SP2 on  x86_64</a>
+- <a href="install/InstallSLESonRPi.md">Installation of SLES15 SP2 on Raspberry Pi/aarch64</a>
 
 - <a href="install/InstallSLE15-JeOS-KVM-Cloud-init.md">Setup cloud-init for KVM installs</a>
 - <a href="https://github.com/zoopster/junk/tree/master/tf-sles15-cloudinit">Terraform install of SLES on KVM</a>
@@ -65,10 +65,23 @@ Longhorn
 
 Mounting NFS in a Deployment
 
+## Adding Clusters to Rancher
+
+    Now that you have Rancher up and running, it's very easy to create new clusters and import existing clusters.
+
+<a href="install/InstallRKEfromRancher">Install RKE from Rancher</a>
+
+<a href="install/ImportClusterRancher">Import existing Cluster</a>
+
+
 ## Deployments
 
-Pi-hole  
-MQTT 
-NodRed
+<a href="deployments/Pi-hole">Pi-hole</a>  - Network-based ad-blocking software, and a custom DNS server. It blocks ads from being displayed on the devices on your network. It uses DNS sinkholing and blocklists as a way of stopping internet ads, malware, malvertising, etc. 
+
+<a href="deployments/Pi-MQTT">MQTT</a> - Simple, light weight publish/subscribe message bus
+
+<a href="deployments/NodeRed">NodRed</a> - Browser based Development Enviroment that make it easy to connect various things together
+
+
 
 

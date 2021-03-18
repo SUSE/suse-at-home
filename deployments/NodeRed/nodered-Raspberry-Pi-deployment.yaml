@@ -6,12 +6,12 @@ metadata:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: nodered-data
+  name: nodered-pvc
   namespace: nodered
 spec:
   accessModes:
     - ReadWriteOnce
-  storageClassName: local-path
+  storageClassName:
   resources:
     requests:
       storage: 2Gi
@@ -34,22 +34,21 @@ spec:
     spec:
       containers:
       - name: nodered
-         image: nodered/node-red:latest
-         ports:
-         - containerPort: 1880
-           name: nodered
-         securityContext:
-         privileged: true
-         volumeMounts:
-         - name: nodered-data
-           mountPath: /data
-         env:
-         - name: PUID
-           value: "1000"
-         - name: GUID
-           value: "1000"
+        image: nodered/node-red:latest
+        ports:
+        - containerPort: 1880
+          name: nodered
+        securityContext:
+          privileged: true
+        volumeMounts:
+        - name: nodered-data
+          mountPath: /data
+        env:
+        - name: PUID
+          value: "1000"
+        - name: GUID
+          value: "1000"
       volumes:
         - name: nodered-data
           persistentVolumeClaim:
-            claimName: nodered-data-pvc
-          
+            claimName: nodered-pvc

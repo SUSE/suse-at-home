@@ -94,6 +94,7 @@ Register your Server
 ```
 SUSEConnect -r INTERNAL-USE-ONLY-xxxx-xxxx
 ```
+Example
 ```
 Registering system to SUSE Customer Center
 Using E-Mail: ###@###.com
