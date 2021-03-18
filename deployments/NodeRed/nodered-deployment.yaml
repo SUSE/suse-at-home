@@ -1,0 +1,54 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: nodered
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: local-path-pvc
+  namespace: nodered
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local-path
+  resources:
+    requests:
+      storage: 2Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodered
+  namespace: nodered
+  labels:
+    app: nodered
+spec:
+  selector:
+    matchLabels:
+      app: nodered
+  template:
+    metadata:
+      labels:
+        app: nodered
+    spec:
+      containers:
+      - name: nodered
+        image: nodered/node-red:latest
+        ports:
+        - containerPort: 1880
+          name: nodered
+        securityContext:
+          privileged: true
+        volumeMounts:
+        - name: nodered-data
+          mountPath: /data
+        env:
+        - name: PUID
+          value: "1000"
+        - name: GUID
+          value: "1000"
+      volumes:
+        - name: nodered-data
+          persistentVolumeClaim:
+            claimName: local-path-pvc

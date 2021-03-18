@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mosquitto
+  namespace: mqtt
+  labels:
+    app: mosquitto
+    tier: db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mosquitto    # indicates which Pods (with which labeles) need be handled by this Deployment
+  template:
+    metadata:         # indicates the metadata that will be added to each Pod
+      labels:
+        app: mosquitto
+        tier: db
+    spec:
+      containers:     # defines a running container inside the Pod
+        - name: mosquitto
+          image: arm64v8/eclipse-mosquitto:1.6.12
+          ports:
+            - containerPort: 1883   # which port of the container is exposed to the Pod
+          volumeMounts:
+            - name: mqtt-data
+              mountPath: /mqtt/data
+            - name: mqtt-log
+              mountPath: /mqtt/log
+            - name: mqtt-config
+              mountPath: /mqtt/config
+      volumes:
+        - name: mqtt-data
+          persistentVolumeClaim:
+            claimName: local-path-pvc
+        - name: mqtt-log
+          persistentVolumeClaim:
+            claimName: local-path-pvc
+        - name: mqtt-config
+          persistentVolumeClaim:
+             claimName: local-path-pvc
