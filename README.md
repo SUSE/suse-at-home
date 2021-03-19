@@ -66,7 +66,7 @@
 
 ### Storage 
 
-Longhorn - highly available persistent block storage for your Kubernetes workloads
+<a href="install/InstallLonghorn.md">Longhorn </a>- highly available persistent block storage for your Kubernetes workloads
 <a href="install/Lab-LocalStorage">Configure local storage (K3s)</a>
 
 Mounting NFS in a Deployment
