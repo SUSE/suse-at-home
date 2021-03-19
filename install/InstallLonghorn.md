@@ -8,7 +8,7 @@
 
 - Rancher up and running
 - Target Cluster that you want to install Longhorn into
-    - Longhorn uses /var/lib/longhorn one the nodes of the Cluster to store data
+    - Longhorn uses /var/lib/longhorn on the nodes of the Cluster to store data
 
 ### Installation of Lonnghorn
 #### Step by Step Instructions
