@@ -73,7 +73,8 @@ Mounting NFS in a Deployment
 
 ## Adding Clusters to Rancher
 
-    Now that you have Rancher up and running, it's very easy to create new clusters and import existing clusters.
+    Now that you have Rancher up and running, it's very easy to create new clusters and import
+    existing clusters.
 
 <a href="install/InstallRKEfromRancher">Install RKE from Rancher</a>
 
