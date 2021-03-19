@@ -29,11 +29,15 @@
 ### Rancher
     Now that we have an OS we have a couple of options for Rancher.
 
-    Rancher normally runs on top of Kubernetes. You pick any of our Kubernetes (RKE, RKE2 or K3s) and then install Rancher via helm.  
+    Rancher normally runs on top of Kubernetes. You pick any of our Kubernetes (RKE, RKE2 or K3s) and then 
+    install Rancher via helm.  
 
-- In a production world, we would <a href="install/InstallRKEonSLES15x86_64.md">install RKE on top SLES</a> and then follow the instructions for installing <a href="install/InstallRancher-Helm.md">Rancher using helm to install Rancher on k8s</a>
+- In a production world, we would <a href="install/InstallRKEonSLES15x86_64.md">install RKE on top SLES</a> and then
+  follow the instructions for installing <a href="install/InstallRancher-Helm.md">Rancher using helm to install Rancher
+  on k8s</a>
 
-- Since this is just a system at home we could run the might lighter version of Kubernetes by <a href="install/InstallK3s.md">Installing K3s</a> and then follow the instructions for installing <a href="install/InstallRancher-Helm.
+- Since this is just a system at home we could run the might lighter version of Kubernetes by <a href="install/InstallK3s.md">Installing K3s</a>
+  and then follow the instructions for installing <a href="install/InstallRancher-Helm.
 
 - You could also just run Rancher as a Service under linux by following the <a href="install/InstallRancher-Rancherd.md">Quick install of Rancher on RKE2 using Rancherd</a>
 
@@ -49,19 +53,20 @@
 - RKE - Full Blown Kubernetes
   - <a href="install/InstallRKEonSLES15x86_64.md">Simple single-node RKE install on SLES15 SP2 x86_64</a>
 - RKE2 (Rancher Government)
-  - <a href="install/InstallRKE2onSLE.md">Install RKE2 (RKE government) on SLES15 SP2 x86_64</a>
-- K3s - Lightwight w/ batteries 
+  - <a href="install/InstallRKE2onSLE.md">Install RKE2 (RKE Government) on SLES15 SP2 x86_64</a>
+- K3s - Lightweight w/ batteries 
   - <a href="install/InstallK3s.md">Install K3s</a>
 
 ## Configuration 
 
 ### Networking
 
-   <a href="install/InstallMetalLB.md">Configure MetalLB</a> - LoadBalancer that allows you to assign a group of local IP addresses to be used by Applications running unser Kubernetes
+   <a href="install/InstallMetalLB.md">Configure MetalLB</a> - LoadBalancer that allows you to define a pool(s) of local
+   IP addresses that can be automatically assigned/used by Applications deployed in Kubernetes 
 
 ### Storage 
 
-Longhorn
+Longhorn - highly available persistent block storage for your Kubernetes workloads
 <a href="install/Lab-LocalStorage">Configure local storage (K3s)</a>
 
 Mounting NFS in a Deployment
@@ -77,11 +82,14 @@ Mounting NFS in a Deployment
 
 ## Deployments
 
-<a href="deployments/Pi-hole">Pi-hole</a>  - Network-based ad-blocking software, and a custom DNS server. It blocks ads from being displayed on the devices on your network. It uses DNS sinkholing and blocklists as a way of stopping internet ads, malware, malvertising, etc. 
+<a href="deployments/Pi-hole">Pi-hole</a>  - Network-based ad-blocking software, and a custom DNS server. It blocks ads
+from being displayed on the devices on your network. It uses DNS sinkholing and blocklists as a way of stopping internet
+ads, malware, malvertising, etc. 
 
 <a href="deployments/Pi-MQTT">MQTT</a> - Simple, light weight publish/subscribe message bus
 
-<a href="deployments/NodeRed">NodRed</a> - Browser based Development Enviroment that make it easy to connect various things together
+<a href="deployments/NodeRed">NodRed</a> - Browser based Development Enviroment that make it easy to connect various 
+things together
 
 
 
