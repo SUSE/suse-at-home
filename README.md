@@ -12,7 +12,8 @@
 ### Install - /install 
     All information on how go from metal until you have SLES, Kubernetes (RKE or K3s) and Rancher 
     
-    This is where you should start...even if you have SLES install just look. Make sure you have the proper packages intalled and enabled, turn off or open up the fireware and make sure you setup the ssh-keys.
+    This is where you should start...even if you have SLES install just look. Make sure you have the proper
+    packages intalled and enabled, turn off or open up the fireware and make sure you setup the ssh-keys.
 
 ### SLES Install
     Pick a one of the methods below to install SLES
