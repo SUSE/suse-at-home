@@ -37,7 +37,7 @@
   on k8s</a>
 
 - Since this is just a system at home we could run the might lighter version of Kubernetes by <a href="install/InstallK3s.md">Installing K3s</a>
-  and then follow the instructions for installing <a href="install/InstallRancher-Helm.md">
+  and then follow the instructions for installing <a href="install/InstallRancher-Helm.md"></a>
 
 - You could also just run Rancher as a Service under linux by following the <a href="install/InstallRancher-Rancherd.md">Quick install of Rancher on RKE2 using Rancherd</a>
 
