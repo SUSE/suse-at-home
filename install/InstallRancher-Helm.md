@@ -107,14 +107,34 @@ Example output
 namespace/cattle-system created
 ```
 
-##### deploy Rancher via helm (we'll setup NON-HA)
+##### (Option 1) Deploy Rancher via helm - Self-signed Cert (we'll setup NON-HA)
+
+* Replace hostname with your FDQN 
 
 ```
 helm install rancher rancher-latest/rancher \
   --namespace cattle-system \
-  --set hostname=$(DNS_name) \
+  --set hostname=rancher.xyz.com \
   --set replicas=1
 ```
+
+
+##### (Option 2) - deploy Rancher via helm - LetsEncrypt Cert
+
+* Replace hostname with your FDQN
+
+* Replace letsEncrypt.email with email adress
+```
+helm install rancher rancher-latest/rancher \
+--namespace cattle-system \
+--set hostname=rancher.xyz.com \
+--set replicas=1 \
+--set ingress.tls.source=letsEncrypt \
+--set letsEncrypt.email=admin@xyz.com \
+--set letsEncrypt.environment=production
+```
+
+
 
 ###### Verify Rancher is ready
 ```

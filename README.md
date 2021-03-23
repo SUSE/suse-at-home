@@ -6,7 +6,29 @@
 
 * Provide a base of SLES, Kubernetes and Rancher that you can then deploy applications to make your life better
 
+## Suggested Installation Paths
 
+Production Rancher Installation - SLES+RKE+Rancher
+* <a href="install/InstallSLESonx86.md">Install SLES15 SP2 on x86_64</a>
+* <a href="InstallKubernetesTools.md">Install Kubernetes  Tools</a> 
+* <a href="install/InstallRKEonSLES15x86_64.md">Install RKE on SLES</a> 
+* <a href="install/InstallRancher-Helm.md">Install Rancher using helm</a>
+
+RKE 2 Based Rancher Installation - SLES+RKE2+Rancher
+* <a href="install/InstallSLESonx86.md">Install SLES15 SP2 on x86_64</a>
+* <a href="InstallKubernetesTools.md">Install Helm</a> 
+* <a href="install/InstallRancher-Rancherd.md">Install of Rancher on RKE2 using Rancherd</a>
+
+K3s Rancher Install - SLES+K3s+Rancher
+* <a href="install/InstallSLESonx86.md">Install SLES15 SP2 on x86_64</a>
+* <a href="install/InstallK3s.md">Install K3s</a>
+* <a href="InstallKubernetesTools.md">Install Helm</a> 
+* <a href="install/InstallRancher-Helm.md">Install Rancher using helm</a>
+
+
+Install K3s on Raspberry Pi
+* <a href="install/InstallSLESonRPi.md">Installation of SLES15 SP2 on Raspberry Pi/aarch64</a>
+* <a href="install/InstallK3s.md">Install K3s</a>
 ## What's here
 
 ### Install - /install 
@@ -17,7 +39,7 @@
     Make sure you have the proper packages intalled and enabled, turn off or 
     open up the firewall and make sure you setup the ssh-keys.
 
-### SLES Install
+### Install SLES
     Pick one of the methods below to install SLES
 
 - <a href="install/InstallSLESonx86.md">Installation of SLES15 SP2 on  x86_64</a>
@@ -26,31 +48,8 @@
 - <a href="install/InstallSLE15-JeOS-KVM-Cloud-init.md">Setup cloud-init for KVM installs</a>
 - <a href="https://github.com/zoopster/junk/tree/master/tf-sles15-cloudinit">Terraform install of SLES on KVM</a>
 
-#### Install Kubernetes Tools -  <a href="InstallKubernetesTools.md">Installation of Kubernetes  Tools</a> 
-
-
-
-### Rancher
-    Now that we have an OS we have a couple of options for Rancher.
-
-    Rancher normally runs on top of Kubernetes. You pick any of our Kubernetes (RKE, RKE2 or K3s) and then 
-    install Rancher via helm.  
-
-- In a production world, we would <a href="install/InstallRKEonSLES15x86_64.md">install RKE on top SLES</a> and then
-  follow the instructions for installing <a href="install/InstallRancher-Helm.md">Rancher using helm to install Rancher
-  on k8s</a>
-
-- Since this is just a system at home we could run the much lighter version of Kubernetes by <a href="install/InstallK3s.md">Installing K3s</a>
-  and then follow the instructions for installing <a href="install/InstallRancher-Helm.md">Rancher via helm as above</a>
-
-- You could also just run Rancher via RancherD <a href="install/InstallRancher-Rancherd.md">Quick install of Rancher on RKE2 using Rancherd</a>
-
-- Or you could just run Rancher under docker by following <a href="install/InstallRancher-Docker.md">Quick install of Rancher using docker</a>
-
-- Rancher
-  - <a href="install/InstallRancher-Docker.md">Quick install of Rancher using docker</a>
-  - <a href="install/InstallRancher-Rancherd.md">Quick install of Rancher on RKE2 using Rancherd</a>
-  - <a href="install/InstallRancher-Helm.md">Using helm to install Rancher on k8s</a>
+### Install Kubernetes Tools   
+* <a href="InstallKubernetesTools.md">Installation of Kubernetes  Tools</a> 
 
 ### Installing Kubernetes
 
@@ -61,7 +60,25 @@
 - K3s - Lightweight w/ batteries 
   - <a href="install/InstallK3s.md">Install K3s</a>
 
-## Configuration 
+
+### Install Rancher
+    We have a couple of options for Rancher.
+
+    Rancher normally runs on top of Kubernetes. You pick any of our 
+    Kubernetes (RKE, RKE2 or K3s) and then install Rancher via helm.  
+
+
+
+
+
+- Rancher
+  - <a href="install/InstallRancher-Docker.md">Quick install of Rancher using docker</a>
+  - <a href="install/InstallRancher-Rancherd.md">Quick install of Rancher on RKE2 using Rancherd</a>
+  - <a href="install/InstallRancher-Helm.md">Using helm to install Rancher on k8s</a>
+
+
+
+## Configuration of cluster after it's up and running 
 
 ### Networking
 
