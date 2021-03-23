@@ -60,28 +60,21 @@ NOTES:
 cert-manager has been deployed successfully!
 ```
 
-In order to begin issuing certificates, you will need to set up a ClusterIssuer
-or Issuer resource (for example, by creating a 'letsencrypt-staging' issuer).
-...
 
-https://docs.cert-manager.io/en/latest/reference/ingress-shim.html
-
-
-##### Verify rollout
+###### Verify rollout
 ```
 kubectl -n cert-manager rollout status deploy/cert-manager-webhook
 
-Example
+Example output
 deployment "cert-manager-webhook" successfully rolled out
 ```
+
 ```
 kubectl -n cert-manager rollout status deploy/cert-manager
 
-Example
+Example output
 deployment "cert-manager" successfully rolled out
 ```
-
-
 
 
 #### Install Rancher
@@ -89,9 +82,11 @@ deployment "cert-manager" successfully rolled out
 
 ```
 helm repo add rancher-latest https://releases.rancher.com/server-charts/latest
-Example
+
+Example output
 "rancher-latest" has been added to your repositories
 ```
+###### update the repo
 ```
 helm repo update
 
@@ -108,7 +103,7 @@ Update Complete. ⎈ Happy Helming!⎈
 ```
 kubectl create namespace cattle-system
 
-Example
+Example output
 namespace/cattle-system created
 ```
 
@@ -125,7 +120,6 @@ helm install rancher rancher-latest/rancher \
 ```
 kubectl -n cattle-system rollout status deploy/rancher
 
-Example
-
+Example output
 deployment "rancher" successfully rolled out
 ```

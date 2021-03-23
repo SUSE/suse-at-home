@@ -170,7 +170,7 @@ rke remove
 ```
 mkdir /home/tux/.kube
 cp kube_config_cluster.yml /home/tux/.kube/config
-chmod 644 /home/tux/.kube/config
+chmod 600 /home/tux/.kube/config
 ```
 OR symlink it
 ```

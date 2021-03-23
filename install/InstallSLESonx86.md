@@ -134,36 +134,3 @@ hostnamectl set-hostname rke-YOURNAME-1
 reboot
 ```
 ### Repeat these steps on a 2nd VM name rke-YOURNAME-2
-
-
-## Overlay installation on KVM/libvirt using JeOS
-### Start with JeOS
-
-
-Create domain from ISO
-- 8 GiB RAM
-- 2 CPU
-- 60 GiB hdd
-
-
-Boot from iso
-Login as root
-Register system
-```
-SUSEConnect -r <regcode>
-```
-Add containers Module
-```
-SUSEConnect -p sle-module-container/15.2/x86_64
-```
-Install docker, yast
-```
-zypper -n in -t pattern yast2_basis
-
-zypper -n in -y sudo nmap docker wget iputils vim
-
-```
-Create tux user
-```
-yast2 users add username=tux password=linux
-```

@@ -10,13 +10,15 @@
 ## What's here
 
 ### Install - /install 
-    All information on how go from metal until you have SLES, Kubernetes (RKE or K3s) and Rancher 
+    All information on how go from metal until you have SLES, Kubernetes 
+    (RKE or K3s) and Rancher 
     
-    This is where you should start...even if you have SLES install just look. Make sure you have the proper
-    packages intalled and enabled, turn off or open up the fireware and make sure you setup the ssh-keys.
+    This is where you should start...even if you have SLES install just look.
+    Make sure you have the proper packages intalled and enabled, turn off or 
+    open up the firewall and make sure you setup the ssh-keys.
 
 ### SLES Install
-    Pick a one of the methods below to install SLES
+    Pick one of the methods below to install SLES
 
 - <a href="install/InstallSLESonx86.md">Installation of SLES15 SP2 on  x86_64</a>
 - <a href="install/InstallSLESonRPi.md">Installation of SLES15 SP2 on Raspberry Pi/aarch64</a>
@@ -38,10 +40,10 @@
   follow the instructions for installing <a href="install/InstallRancher-Helm.md">Rancher using helm to install Rancher
   on k8s</a>
 
-- Since this is just a system at home we could run the might lighter version of Kubernetes by <a href="install/InstallK3s.md">Installing K3s</a>
+- Since this is just a system at home we could run the much lighter version of Kubernetes by <a href="install/InstallK3s.md">Installing K3s</a>
   and then follow the instructions for installing <a href="install/InstallRancher-Helm.md">Rancher via helm as above</a>
 
-- You could also just run Rancher as a Service under linux by following the <a href="install/InstallRancher-Rancherd.md">Quick install of Rancher on RKE2 using Rancherd</a>
+- You could also just run Rancher via RancherD <a href="install/InstallRancher-Rancherd.md">Quick install of Rancher on RKE2 using Rancherd</a>
 
 - Or you could just run Rancher under docker by following <a href="install/InstallRancher-Docker.md">Quick install of Rancher using docker</a>
 
@@ -69,18 +71,19 @@
 ### Storage 
 
 <a href="install/InstallLonghorn.md">Longhorn </a>- highly available persistent block storage for your Kubernetes workloads
+
 <a href="install/Lab-LocalStorage">Configure local storage (K3s)</a>
 
 Mounting NFS in a Deployment
 
-## Adding Clusters to Rancher
+## Adding Downstream Clusters to Rancher
 
     Now that you have Rancher up and running, it's very easy to create new clusters and import
     existing clusters.
 
-<a href="install/InstallRKEfromRancher">Install RKE from Rancher</a>
+<a href="install/InstallRKEfromRancher">Install Downstream RKE Cluster from Rancher</a>
 
-<a href="install/ImportClusterRancher">Import existing Cluster</a>
+<a href="install/ImportClusterRancher">Import existing Downstream Cluster</a>
 
 
 ## Deployments
