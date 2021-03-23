@@ -49,7 +49,7 @@ Install K3s on Raspberry Pi
 - <a href="https://github.com/zoopster/junk/tree/master/tf-sles15-cloudinit">Terraform install of SLES on KVM</a>
 
 ### Install Kubernetes Tools   
-* <a href="InstallKubernetesTools.md">Installation of Kubernetes  Tools</a> 
+* <a href="install/InstallKubernetesTools.md">Installation of Kubernetes  Tools</a> 
 
 ### Installing Kubernetes
 
