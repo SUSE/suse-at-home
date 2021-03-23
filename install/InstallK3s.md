@@ -69,6 +69,12 @@ kubectl completion bash >/etc/bash_completion.d/kubectl
 Logout and log back in to activate.
 
 ##### Need helm to work?
+
+First, Follow the instructions to install Helm in the <a href="InstallKubernetesTools.md">Installation of Kubernetes  Tools</a>
+
+You will not need to install kubectl since the k3s install already did that for you.
+
+###### Export the k3s.yaml
 ```
 export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
 ```
@@ -80,3 +86,5 @@ ln -s /etc/rancher/k3s/k3s.yml /home/tux/.kube/config
 ```
 
 Done. Time to move on to adding a workload.
+
+

@@ -24,6 +24,8 @@
 - <a href="install/InstallSLE15-JeOS-KVM-Cloud-init.md">Setup cloud-init for KVM installs</a>
 - <a href="https://github.com/zoopster/junk/tree/master/tf-sles15-cloudinit">Terraform install of SLES on KVM</a>
 
+#### Install Kubernetes Tools -  <a href="InstallKubernetesTools.md">Installation of Kubernetes  Tools</a> 
+
 
 
 ### Rancher

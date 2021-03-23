@@ -14,6 +14,10 @@ Enable the Containers Module
 SUSEConnect -p sle-module-containers/15.2/x86_64
 '''
 
+Make sure  you install the Kubernetes  Tools before starting this lab
+
+<a href="InstallKubernetesTools.md">Installation of Kubernetes  Tools</a>
+
 ###### Connect to Server
 ###### as tux user (the rest of this lab assumes tux is the user)
 ```
@@ -183,87 +187,4 @@ NAME        STATUS   ROLES                      AGE     VERSION
 10.0.5.35   Ready    controlplane,etcd,worker   2m12s   v1.18.6
 ```
 
-##### Install what was the latest helm client (x86_64/amd64)
-```
-sudo wget -O helm.tar.gz https://get.helm.sh/helm-v3.4.2-linux-amd64.tar.gz
-tar -zxvf helm.tar.gz
-sudo mv linux-amd64/helm /usr/local/bin
-sudo chmod +x /usr/local/bin/helm
-```
-##### Install helm via script
-```
-curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
-chmod 700 get_helm.sh
-./get_helm.sh
-```
-#### OR (the risk-taker's method)
-curl -fsSL https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 |bash
 
-#### Install cert-manager
-
-###### Create a namespace
-```
-kubectl create namespace cert-manager
-
-Example
-namespace/cert-manager created
-```
-###### Add the jetstack repo to helm
-```
-helm repo add jetstack https://charts.jetstack.io
-
-Example output
-https://charts.jetstack.io "jetstack" has been added to your repositories
-```
-
-##### Refresh helm
-```
-helm repo update
-
-Example output
-Hang tight while we grab the latest from your chart repositories...
-...Successfully got an update from the "jetstack" chart repository
-...Successfully got an update from the "bitnami" chart repository
-Update Complete. ⎈ Happy Helming!⎈
-```
-##### Install certmanager via helm
-```
-helm install \
-  cert-manager jetstack/cert-manager \
-  --namespace cert-manager \
-  --version v1.2.0 \
-  --set installCRDs=true
-
-Example output
-NAME: cert-manager
-LAST DEPLOYED: Tue Sep  8 10:51:54 2020
-NAMESPACE: cert-manager
-STATUS: deployed
-REVISION: 1
-TEST SUITE: None
-NOTES:
-cert-manager has been deployed successfully!
-```
-
-In order to begin issuing certificates, you will need to set up a ClusterIssuer
-or Issuer resource (for example, by creating a 'letsencrypt-staging' issuer).
-...
-
-https://docs.cert-manager.io/en/latest/reference/ingress-shim.html
-
-
-##### Verify rollout
-```
-kubectl -n cert-manager rollout status deploy/cert-manager-webhook
-
-Example
-deployment "cert-manager-webhook" successfully rolled out
-```
-```
-kubectl -n cert-manager rollout status deploy/cert-manager
-
-Example
-deployment "cert-manager" successfully rolled out
-```
-
-#### DONE!
