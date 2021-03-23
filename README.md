@@ -10,19 +10,19 @@
 
 Production Rancher Installation - SLES+RKE+Rancher
 * <a href="install/InstallSLESonx86.md">Install SLES15 SP2 on x86_64</a>
-* <a href="InstallKubernetesTools.md">Install Kubernetes  Tools</a> 
+* <a href="install/InstallKubernetesTools.md">Install Kubernetes  Tools</a> 
 * <a href="install/InstallRKEonSLES15x86_64.md">Install RKE on SLES</a> 
 * <a href="install/InstallRancher-Helm.md">Install Rancher using helm</a>
 
 RKE 2 Based Rancher Installation - SLES+RKE2+Rancher
 * <a href="install/InstallSLESonx86.md">Install SLES15 SP2 on x86_64</a>
-* <a href="InstallKubernetesTools.md">Install Helm</a> 
+* <a href="install/InstallKubernetesTools.md">Install Helm</a> 
 * <a href="install/InstallRancher-Rancherd.md">Install of Rancher on RKE2 using Rancherd</a>
 
 K3s Rancher Install - SLES+K3s+Rancher
 * <a href="install/InstallSLESonx86.md">Install SLES15 SP2 on x86_64</a>
 * <a href="install/InstallK3s.md">Install K3s</a>
-* <a href="InstallKubernetesTools.md">Install Helm</a> 
+* <a href="install/InstallKubernetesTools.md">Install Helm</a> 
 * <a href="install/InstallRancher-Helm.md">Install Rancher using helm</a>
 
 
