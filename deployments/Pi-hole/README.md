@@ -1,7 +1,6 @@
-## Installing k3s
+## Deploying Pi-hole
 
-In this lab, we are going to import and existing Kubernetes Cluster into Rancher. 
-The same steps will work for an RKE, K3s or any other Kubernetes distro
+In this lab, we are going to Deploy Ph-hole
 
 ## Prerequisites:
  - running Rancher Server
@@ -9,7 +8,7 @@ The same steps will work for an RKE, K3s or any other Kubernetes distro
 
 ## Step by Step Instructions
 
-### Change the ports Traefik is ussing to 81 and 444
+### (Optional) - If you are ussing Traefik Change the ports Traefik is ussing to 81 and 444
 
     Select Cluster Explorer -> Services
 <img src="../../assets/DeployPi-hole-LoadBalancer-1-Traefik-Select.png" width="900">
@@ -24,7 +23,7 @@ The same steps will work for an RKE, K3s or any other Kubernetes distro
     You should see the Service Change
 <img src="../../assets/DeployPi-hole-LoadBalancer-4-Traefik-complete.png" width="800">
 
-### Add Pi-hole Repo
+###### Add Pi-hole Repo
 
     Select App & Marketplace -> Chart Repositories
 <img src="../../assets/DeployPi-hole-LoadBalancer-5-Chart-Repos.png" width="200">
