@@ -88,20 +88,7 @@ Example output
 sudo chown tux:users /usr/local/bin/rke
 sudo chmod +x /usr/local/bin/rke
 ```
-###### Install the latest kubectl
-```
-sudo curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
 
-Example output
-% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100 41.0M  100 41.0M    0     0  27.9M      0  0:00:01  0:00:01 --:--:-- 27.9M
-```
-```
-sudo mv kubectl /usr/local/bin
-sudo chown tux:users /usr/local/bin/kubectl
-sudo chmod +x /usr/local/bin/kubectl
-```
 #### Create RKE Config file
 
 ###### Create cluster.yml with the text below
