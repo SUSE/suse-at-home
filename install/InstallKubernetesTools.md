@@ -36,6 +36,12 @@ kubectl completion bash >/etc/bash_completion.d/kubectl
 ```
 Logout and log back in to activate.
 
+##### Want to speed up kubectl commands?
+```
+cat >> ~/.profile <<EOF
+alias kubectl='kubectl --cache-dir /dev/shm/${USER}_kube_http_cache'
+EOF
+```
 
 ### Install what was the latest helm client (x86_64/amd64)
 
