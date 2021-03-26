@@ -8,7 +8,7 @@ In this lab, we are going to install and configure Metal LB
 kubectl create namespace metallb-system
 ```
 
-#### Create a metallb.yml file
+#### Create a metallb-config.yml file
 Ensure the addresses match the available addresses in your configuration
 Edit or create a metallb-config.yml with the following entries
 
