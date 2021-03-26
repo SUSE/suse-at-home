@@ -82,7 +82,7 @@ or you can symlink it
 ensure you have .kube/config in your home directory
 for tux use
 ```
-ln -s /etc/rancher/k3s/k3s.yml /home/tux/.kube/config
+ln -s /etc/rancher/k3s/k3s.yaml /home/tux/.kube/config
 ```
 
 Done. Time to move on to adding a workload.
