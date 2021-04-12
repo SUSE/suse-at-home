@@ -2,7 +2,7 @@
 
 In this lab, we are going to install and configure k3s on a Raspaberry Pi
 
-### Before we start the lab you need to have <a href="SLESonRPi.md">SLES 15 SP2 installed</a> on your Raspberry Pi.
+### Before we start the lab you need to have <a href="InstallSLESonRPi.md">SLES 15 SP2 installed</a> on your Raspberry Pi.
 
 We will begin this lab as the tux user on your Raspberry Pi
 
@@ -69,6 +69,12 @@ kubectl completion bash >/etc/bash_completion.d/kubectl
 Logout and log back in to activate.
 
 ##### Need helm to work?
+
+First, Follow the instructions to install Helm in the <a href="InstallKubernetesTools.md">Installation of Kubernetes  Tools</a>
+
+You will not need to install kubectl since the k3s install already did that for you.
+
+###### Export the k3s.yaml
 ```
 export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
 ```
@@ -76,7 +82,9 @@ or you can symlink it
 ensure you have .kube/config in your home directory
 for tux use
 ```
-ln -s /etc/rancher/k3s/k3s.yml /home/tux/.kube/config
+ln -s /etc/rancher/k3s/k3s.yaml /home/tux/.kube/config
 ```
 
 Done. Time to move on to adding a workload.
+
+
