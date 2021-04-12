@@ -13,6 +13,22 @@
 - Containers Module installed
 - yast2, docker, sudo installed
 
+
+#### Prerequisites
+
+DNS setup and configured - Here is the examples used in the labs
+
+```
+rancher rancher.xyz.com   10.0.11.10
+
+node-1   node-1.xyz.com   10.0.11.11
+node-2   node-2.xyz.com   10.0.11.12
+
+```
+
+
+
+
 ### Installation on KVM/libvirt using media
 #### Step by Step Instructions
 
@@ -126,14 +142,14 @@ usermod -aG docker tux
 
 #### Change the Hostname - Please use your name as part of the hostname
 ```
-hostnamectl set-hostname rke-YOURNAME-1
+hostnamectl set-hostname rancher
 ```
 
 #### Reboot the workstation and login as tux
 ```
 reboot
 ```
-### Repeat these steps on a 2nd VM name rke-YOURNAME-2
+### Repeat these steps on a 2nd VM name node-1
 
 
 ## Overlay installation on KVM/libvirt using JeOS
