@@ -9,12 +9,10 @@ Helm 3 client will be installed and Certificate Manager will be deployed in the 
 Clean installation of <a href="InstallSLESonx86.md"> SLES 15 SP2 x86_64</a> running "somewhere".
 This machine can be a local VM or an instance in the Cloud.
 
-
-Enable the Containers Module if you did not do it durring the install
-
-```
+Enable the Containers Module
+'''
 SUSEConnect -p sle-module-containers/15.2/x86_64
-```
+'''
 
 ###### Connect to Server
 ###### as tux user (the rest of this lab assumes tux is the user)
