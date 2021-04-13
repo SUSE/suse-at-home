@@ -6,11 +6,9 @@ metadata:
   labels:
     tier: db
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:             # indicates into which pods ClusterIP provides access
     app: mosquitto
   ports:
     - protocol: TCP
-      port: 61883
-      targetPort: 1883    # port exposed by Pod
-      nodePort: 31883
+      port: 1883
