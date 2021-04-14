@@ -5,51 +5,52 @@ In this lab we are going to install and configure an MQTT Workload to run on k3s
 There are 2 methods provided to install MQTT, the Easy Method with Rancher and Helm, or the Manual Method which include the needed yaml files. 
 
 
-## Easy Method via Rancher and Helm
+# Easy Method via Rancher and Helm
 
-### Add k8s-at-home Repo
+### 1) Add k8s-at-home Repo
 
     Select App & Marketplace -> Chart Repositories
-<img src="../../assets/Rancher-ChangetoApps.gif" width="200">
+<img src="../../assets/Rancher-ChangetoApps.gif" width="300">
 
 
-Click Create to define a new Chart Repository
+### 2) Click Create to define a new Chart Repository
     
     Name: k8s-at-home
     Index url: https://k8s-at-home.com/charts/
     
-<img src="../../assets/Rancher-addHelmRepo.gif" width="400">
+<img src="../../assets/Rancher-addHelmRepo-k8s-at-home.gif" width="600">
 
-    You should now see the k8s-at-home Repo
-
-
-### Install Mosquitto 
+You should now see the k8s-at-home Repo
 
 
-    Select Chart 
-    
-    You should now see the option to install Mosquitto
-    
-Give it a name 
+
+
+
+### 3) Select Charts - You should now see Mosquitto as an available Chart
+
+<img src="../../assets/Deploy-mosquitto-1-app.png" width="400">
+
+
+### 4) Install Mosquitto 
 
 
 Click on Values YAML and change the following items
     
     service:
       type: LoadBalancer
-<img src="../../assets/DeployMQTT-1-installHelm.png" width="600">
+<img src="../../assets/Deploy-mosquitto-2-installHelm.png" width="600">
 
 
-    Press Install and watch it deploy
+### 5) Press Install and watch it deploy
 
-<img src="../../assets/DeployPi-hole-LoadBalancer-11-Deploy.png" width="900">
-
-
+<img src="../../assets/Deploy-mosquitto-3-deployed.png" width="900">
 
 
-## Manual Method 
 
-### Deploy MQTT using the local-path-provisioner 
+
+# Manual Method 
+
+### Step 1) Deploy MQTT using the local-path-provisioner 
 
 For x86
 
@@ -57,12 +58,12 @@ For x86
 For Raspberry Pi
 
     kubectl create -f nodered-Raspberry-Pi-deployment.yaml
-### Deploy the Service
+### Step 2) Deploy the Service
 
     kubectl create -f nodered-service-lb.yaml
 
 
-### Locate IP address of Node-Red
+### Step 3) Locate IP address of Node-Red
 
     kubectl get svc -n nodered
 
