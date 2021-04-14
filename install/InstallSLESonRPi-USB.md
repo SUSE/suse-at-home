@@ -15,15 +15,15 @@ There are a couple of things we need to do to make SLE boot from USB.
  #  Update Raspberry Pi's Firmware (03192021)
 ** Don't skip this step - older firmware does not support booting from USB or updating Firmware from the USB
 
-### Step 1) Download the Latest Raspian OS from ... and burn it to an SDcard.
+### 1) Download the Latest Raspian OS from ... and burn it to an SDcard.
 
 https://www.raspberrypi.org/software/
 
-### Step 2) Boot from the Raspberry Pi OS
+### 2) Boot from the Raspberry Pi OS
 
 You do not need to go through the full configuration wizard.
 
-### Step 3) Apply the latest Firmware 
+### 3) Apply the latest Firmware 
 
 Go to a Terminal Prompt
 
@@ -37,7 +37,7 @@ Go to a Terminal Prompt
       ** don't skip this - The next option will not appear if you don't have a current firmware active.
       ** Reboot can take up to 3 mins to write EPROM
 
-### Step 4) Set boot option in Firmware 
+### 4) Set boot option in Firmware 
 
 Go to a Terminal Prompt
 
@@ -55,16 +55,16 @@ Power On the Pi and compare look at the boot screen. It shoud look simular to th
 
 # Making the USB Boot Disk
 
-### Step 1) Download the latest Raspberry Pi Firmware
+### 1) Download the latest Raspberry Pi Firmware
 Download https://github.com/raspberrypi/firmware
 
-### Step 2) Burning the image to an USB disk
+### 2) Burning the image to an USB disk
 
 Burn this image to the USB Disk with the same method you used to burn the image to an SDCard.
 
-### Step 3) Mount the EFI partition (if it was unmounted during the burn process)
+### 3) Mount the EFI partition (if it was unmounted during the burn process)
 
-### Step 4) update Firmware on USB disk
+### 4) update Firmware on USB disk
 
 Copy the following files from /boot folder of the github project to root of your boot USB.
 

@@ -50,7 +50,7 @@ Click on Values YAML and change the following items
 
 # Manual Method 
 
-### Step 1) Deploy MQTT using the local-path-provisioner 
+### 1) Deploy MQTT using the local-path-provisioner 
 
 For x86
 
@@ -58,12 +58,12 @@ For x86
 For Raspberry Pi
 
     kubectl create -f nodered-Raspberry-Pi-deployment.yaml
-### Step 2) Deploy the Service
+### 2) Deploy the Service
 
     kubectl create -f nodered-service-lb.yaml
 
 
-### Step 3) Locate IP address of Node-Red
+### 3) Locate IP address of Node-Red
 
     kubectl get svc -n nodered
 
