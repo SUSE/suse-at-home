@@ -1,4 +1,4 @@
-## Installing SLES 15 SP2 on Raspberry Pi - Supplement  - Booting from USB drive
+# Installing SLES 15 SP2 on Raspberry Pi - Supplement  - Booting from USB drive
 
 This lab is a suplement to the install and configure SLES 15 SP2 on a Raspberry Pi. 
 
@@ -12,20 +12,23 @@ There are a couple of things we need to do to make SLE boot from USB.
 * Copy latest Firmware from github to SLE USB boot disk
 
 
- ## Update Raspberry Pi's Firmware (03192021)
+ #  Update Raspberry Pi's Firmware (03192021)
 ** Don't skip this step - older firmware does not support booting from USB or updating Firmware from the USB
 
-#### Download the Latest Raspian OS from ... and burn it to an SDcard.
+### Step 1) Download the Latest Raspian OS from ... and burn it to an SDcard.
 
-#### Boot from the Raspberry Pi OS
+https://www.raspberrypi.org/software/
+
+### Step 2) Boot from the Raspberry Pi OS
 
 You do not need to go through the full configuration wizard.
 
-#### Apply the latest Firmware 
+### Step 3) Apply the latest Firmware 
 
 Go to a Terminal Prompt
 
     sudo raspi-config
+
     Select 6 Advanced Options-> A7 BootLoader Version
     Select E1 Latest and Accept
 
@@ -34,7 +37,7 @@ Go to a Terminal Prompt
       ** don't skip this - The next option will not appear if you don't have a current firmware active.
       ** Reboot can take up to 3 mins to write EPROM
 
- #### Set boot option in Firmware 
+### Step 4) Set boot option in Firmware 
 
 Go to a Terminal Prompt
 
@@ -44,20 +47,24 @@ Go to a Terminal Prompt
 
     Exit and Reboot.
 
-Once the  Display goes blank the firmware has been update and you can power off and remove the SDcard
+###  Once the  Display goes blank the firmware has been update and you can power off and remove the SDcard
 
 Power On the Pi and compare look at the boot screen. It shoud look simular to the screen below.
 
 <img src="../assets/InstallSLESonRPi-USB-1-BootScreen.png" width="600">
 
+# Making the USB Boot Disk
 
-## Burning the image to an USB disk
-
-You will need to burn this image to the USB Disk with the same method you used to burn the image to an SDCard.
-
-After Burning the image make sure the EFI partition is still mounted to your machine, if not, mount it.
-
+### Step 1) Download the latest Raspberry Pi Firmware
 Download https://github.com/raspberrypi/firmware
+
+### Step 2) Burning the image to an USB disk
+
+Burn this image to the USB Disk with the same method you used to burn the image to an SDCard.
+
+### Step 3) Mount the EFI partition (if it was unmounted during the burn process)
+
+### Step 4) update Firmware on USB disk
 
 Copy the following files from /boot folder of the github project to root of your boot USB.
 
