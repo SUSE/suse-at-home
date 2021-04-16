@@ -1,30 +1,30 @@
-### Installing RKE on SLES 15 SP2
+# Installing RKE on SLES 15 SP2
 
-In this lab, we are going to install a single node Kubernetes Cluster using RKE on vms running SLES 15 SP2
+### At the end of the Lab you will have:
+* Single node Kubernetes Cluster running on a SUSE OS
+* Helm 3 client will be installed and Certificate Manager will be deployed in the Kubernetes Cluster
 
-Helm 3 client will be installed and Certificate Manager will be deployed in the Kubernetes Cluster
+### Prerequisites
 
-#### Prerequisites
+* Clean installation of <a href="InstallSLESonx86.md"> SLES 15 SP2 x86_64</a> running "somewhere".
+  * This machine can be a local VM or an instance in the Cloud.
+    *  Docker installed and enabled
+  * tux user created 
+    * ability to run docker
+* <a href="InstallKubernetesTools.md">Kubernetes  Tools Installed</a>
 
-Clean installation of <a href="InstallSLESonx86.md"> SLES 15 SP2 x86_64</a> running "somewhere".
-This machine can be a local VM or an instance in the Cloud.
-
-Enable the Containers Module
-'''
-SUSEConnect -p sle-module-containers/15.2/x86_64
-'''
 
 Make sure  you install the Kubernetes  Tools before starting this lab
 
-<a href="InstallKubernetesTools.md">Installation of Kubernetes  Tools</a>
+# Download RKE 
 
-###### Connect to Server
-###### as tux user (the rest of this lab assumes tux is the user)
+### 1) ssh to the server at tux
+
 ```
 ssh tux@IP Address
 ```
 
-###### Test the Docker service is running and the tux user can issue docker commands
+### 2) Test the Docker service is running and the tux user can issue docker commands
 ```
 docker ps
 
@@ -33,7 +33,7 @@ docker ps
      CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 ```
 
-###### Create SSH keys
+### 3) Create SSH keys
 ```
 ssh-keygen -b 2048 -t rsa -N ""
 
@@ -61,18 +61,18 @@ The key's randomart image is:
 ```
 
 
-###### Add keys
+### 4) Add keys
 ```
 cat /home/tux/.ssh/id_rsa.pub >> /home/tux/.ssh/authorized_keys
 ```
 
-###### Exchange keys if you have more than one node
+### 5) Optional - Exchange keys if you have more than one node
 Use ssh-copy-id to exchange the keys from each VM, execute this on each VM.
 ```
 ssh-copy-id -i /home/tux/.ssh/id_rsa.pub tux@<ip-other-vm>
 ```
 
-###### Download RKE
+### 6) Download RKE
 ```
 sudo wget -O /usr/local/bin/rke https://github.com/rancher/rke/releases/download/v1.2.5/rke_linux-amd64
 
@@ -83,20 +83,20 @@ Example output
 2020-10-14 16:28:41 (13.9 MB/s) - ‘/usr/local/bin/rke’ saved [42256431/42256431]
 ```
 
-###### Copy the rke binary to /usr/local/bin
+### 7) Copy the rke binary to /usr/local/bin
 ```
 sudo chown tux:users /usr/local/bin/rke
 sudo chmod +x /usr/local/bin/rke
 ```
+# Configure RKE 
 
-#### Create RKE Config file
+### 1) Create RKE Config file using Wizard
 
-###### Create cluster.yml with the text below
 ```
 rke config --name cluster.yml
 ```
 
-###### Take the default answers for all questions with the exception of the following items:
+#### Take the default answers for all questions with the exception of the following items:
 ```
 SSH Address of host should be set to your current Host's IP address
 
@@ -106,7 +106,9 @@ SSH Address of host should be set to your current Host's IP address
 [+] Is host (10.0.5.35) a Worker host (y/n)? [n]: y
 [+] Is host (10.0.5.35) an etcd host (y/n)? [n]: y
 ```
-###### basic cluster.yml example
+### Step 1) optional Manual method 
+
+Create minimum basic cluster.yml 
 ```
 cat <<EOF> cluster.yml
 nodes:
@@ -119,13 +121,14 @@ nodes:
 addon_job_timeout: 120
 EOF
 ```
-###### Edit cluster.yml to increase addon_job_timeout
+### 2) Edit cluster.yml to increase addon_job_timeout
 
     vi cluster.yml
     change addon_job_timeout: 120
 
-###### Install RKE
+# Install RKE
 
+### 1) Bring up RKE Cluster
 ```
 rke up --config cluster.yml
 
@@ -153,7 +156,7 @@ INFO[0174] Finished building Kubernetes cluster successfully
 rke remove
 ```
 
-###### Create symlink for kubeconfig
+### 2) Create symlink for kubeconfig
 ```
 mkdir /home/tux/.kube
 cp kube_config_cluster.yml /home/tux/.kube/config
@@ -164,7 +167,7 @@ OR symlink it
 ln -s /home/tux/kube_config_cluster.yml /home/tux/.kube/config
 ```
 
-###### Verify your node is running
+### 3) Verify your node is running
 ```
 kubectl get nodes
 

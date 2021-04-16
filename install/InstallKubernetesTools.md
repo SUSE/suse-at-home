@@ -1,21 +1,27 @@
 ### Installing Kubernetes Tools
 
-In this lab, we are going to install Kubectl and Helm
+### At the end of the Lab you will have:
+* kubectl installed
+* helm 3 installed
 
 
-#### Prerequisites
+### Prerequisites:
 
-You can install these tool before or after you install a cluster.
+* SUSE OS installed
+
+*Note - You can install these tool before or after you install a cluster.
 
 By default both utils use ~/.kube/config for authentication information.
 It will be created when you create a cluster
 
-##### Connect to Server as tux user (the rest of this lab assumes tux is the user)
+# Installing kubectl
+
+### 1) Connect to Server as tux user (the rest of this lab assumes tux is the user)
 ```
 ssh tux@IP Address
 ```
 
-### Install the latest kubectl
+### 2)Install the latest kubectl
 ```
 sudo curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
 
@@ -30,20 +36,21 @@ sudo chown tux:users /usr/local/bin/kubectl
 sudo chmod +x /usr/local/bin/kubectl
 ```
 
-##### Want to add bash completion?
+### 3) Want to add bash completion?
 ```
 kubectl completion bash >/etc/bash_completion.d/kubectl
 ```
 Logout and log back in to activate.
 
-##### Want to speed up kubectl commands?
+### 4) Want to speed up kubectl commands?
 ```
 cat >> ~/.profile <<EOF
 alias kubectl='kubectl --cache-dir /dev/shm/${USER}_kube_http_cache'
 EOF
 ```
 
-### Install what was the latest helm client (x86_64/amd64)
+# Installing Helm
+
 
 #### Choose 1 of the 3 methods
 

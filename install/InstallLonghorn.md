@@ -10,51 +10,53 @@
 - Target Cluster that you want to install Longhorn into
     - Longhorn uses /var/lib/longhorn on the nodes of the Cluster to store data
 
-### Installation of Lonnghorn
-#### Step by Step Instructions
+# Installation of Longhorn
  
-    From a browser, go to your Rancher Cluster Explorer and make sure you have the Target Cluster selected 
+### 1) From a browser, go to your Rancher Cluster Explorer and make sure you have the Target Cluster selected 
 
 
 <img src="../assets/Longhorn-1-Select-Cluster.png" width="600">
 
 
-    Select Apps & Marketplace from the dropdown menu
+### 2) Select Apps & Marketplace from the dropdown menu
 
 <img src="../assets/Longhorn-2-Apps.png" width="200">
 
 
-    From the Charts Menu, select Longhorn
+### 3) From the Charts Menu, select Longhorn
 
 
 <img src="../assets/Longhorn-3-charts.png" width="800">
 
-    *If you want to change the default path used by Longhorn click 'Customize Default Settings'
+
+### 4) OPTIONAL - If you want to change the default path used by Longhorn click 'Customize Default Settings'
 
 <img src="../assets/Longhorn-4-Change-Defaults.png" width="600">
 
-    Click install and you are Done!
+### 4) Click install and you are Done!
 
 <img src="../assets/Longhorn-5-Install.png" width="600">
 
-### Lonnghorn Console
+# Accessing Longhorn Console
 
-    Once Lognhorn is installed, you can access the console by simply Selecting it in the Upper Left hand Menu and Click on the Longhorn Icon to launch the console
+  Once Longhorn is installed, you can access the console by simply Selecting it in the Upper Left hand Menu and Click on the Longhorn Icon to launch the console
+
+### 1) Select Longhorn UI 
 
 <img src="../assets/Longhorn-Console-1.png" width="300">
 
 
 
-    Notice in the console we don't have any Volumes yet
+**Notice in the console we don't have any Volumes yet**
 
 
 <img src="../assets/Longhorn-Console-2-no-volumes.png" width="800">
 
-### Test Longhorn
+# Testing Longhorn
 
+
+### 1) Create a test-pvc.yml  
 ```
-Create a test-pvc.yml  
-
 # test-pvc.yml 
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -67,12 +69,10 @@ spec:
   resources:
     requests:
       storage: 5Gi
-
 ```
 
+### 1) Create a test-deplyment.yml
 ```
-Create a test-deplyment.yml
-
 # test-deplyment.yml
 kind: Pod
 apiVersion: v1
@@ -93,13 +93,13 @@ spec:
 ```
 
 
-Deploy the PVC and the Deployment
+### 2) Deploy the PVC and the Deployment
 
 ```
     kubectl apply -f test-pvc
     kubectl apply -f test-deplyment.yml
 ```
 
-Look at the Longhorn Dashboard - You now see a volume created
+### 3) Look at the Longhorn Dashboard - You now see a volume created
 
 <img src="../assets/Longhorn-Console-3-Deployed.png" width="800">

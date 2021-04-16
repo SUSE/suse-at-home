@@ -4,9 +4,12 @@ In this lab we are going to install and configure Node-Red using the Local Stora
 
 There are 2 methods provided to install Node-Red, the Easy Method with Rancher and Helm, or the Manual Method which include the needed yaml files. 
 
-Prerequisites:
-     Raspberry Pi running SLES 15 SP2
-     K3s installed
+### Prerequisites:
+
+     Rancher
+     Kubernetes Cluster
+        Default StorageClass
+        LoadBalancer
 
 # Easy Method via Rancher and Helm
 

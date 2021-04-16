@@ -1,6 +1,6 @@
 # Installing SLES 15 SP2 on Raspberry Pi - Supplement  - Booting from USB drive
 
-This lab is a suplement to the install and configure SLES 15 SP2 on a Raspberry Pi. 
+This lab is a supplement to the install and configure SLES 15 SP2 on a Raspberry Pi. 
 
 This lab details the additional steps need to boot SLE from a USB boot disk.
 

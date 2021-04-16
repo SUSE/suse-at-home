@@ -4,6 +4,12 @@ In this lab we are going to install and configure an MQTT Workload to run on k3s
 
 There are 2 methods provided to install MQTT, the Easy Method with Rancher and Helm, or the Manual Method which include the needed yaml files. 
 
+### Prerequisites:
+
+     Rancher
+     Kubernetes Cluster
+        Default StorageClass
+        LoadBalancer
 
 # Easy Method via Rancher and Helm
 

@@ -1,18 +1,24 @@
 # Installing and Configuring Metal LB
 
-In this lab, we are going to install and configure Metal LB
+### At the end of the Lab you will have:
+* MetalLB installed and configure 
 
+### Prerequisites:
 
-#### Create a namespace for Metal LB
+- Kubernetes Cluster
+
+# Install MetalLB     
+
+### 1) Create a namespace for Metal LB
 ```
 kubectl create namespace metallb-system
 ```
 
-#### Create a metallb-config.yml file
+### 2) Create a metallb-config.yml file
 Ensure the addresses match the available addresses in your configuration
 Edit or create a metallb-config.yml with the following entries
 
-*Note this will give the address 10.0.0.100-120 to the LoadBalancer
+*Note this example will give the addresses 10.0.0.100-120 to the LoadBalancer
 
 ```
 apiVersion: v1
@@ -32,7 +38,7 @@ data:
 ```
 kubectl apply -f metallb-config.yml
 ```
-#### Download and deploy metallb.yaml 
+### 3) Download and deploy metallb.yaml 
 
 ```
 kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.5/manifests/metallb.yaml
@@ -55,7 +61,7 @@ daemonset.apps/speaker created
 deployment.apps/controller created
 ```
 
-#### Create secrect (on run once)
+### 4) Create secret (on run once)
 ```
 kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)"
 ```
