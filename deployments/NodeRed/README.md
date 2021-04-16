@@ -21,7 +21,7 @@ Prerequisites:
     Name: k8s-at-home
     Index url: https://k8s-at-home.com/charts/
     
-<img src="../../assets/Rancher-addHelmRepo-k8s-at-home.gif" width="600">
+<img src="../../assets/Rancher-addHelmRepo-k8s-at-home.gif" width="800">
 
 You should now see the k8s-at-home Repo
 
@@ -34,28 +34,36 @@ You should now see the k8s-at-home Repo
 ### 4) Install Node-Red 
 
 
-Click on Values YAML and change the following items
+Click on Values YAML and change/add the following items
+ 
+    env:
+      NODE_RED_ENABLE_PROJECTS: true
+
+    persistence:
+      data:      
+       enabled: true
+       accessMode: ReadWriteOnce
+       size: 1Gi
     
     service:
       type: LoadBalancer
-<img src="../../assets/Deploy-Node-Red-2-installHelm.png" width="600">
+
+<img src="../../assets/Deploy-Node-Red-2-installHelm-zoom.png" width="800">
 
 
 ### 5) Press Install and watch it deploy
 
 <img src="../../assets/Deploy-Node-Red-3-deployed.png" width="900">
 
+### 6) Locate the Node-Red Server
 
+    Cluster Explorer -> Services
 
+<img src="../../assets/Deploy-Node-Red-4-service.gif" width="900">
 
 # Manual Method 
 
 ### 1) Deploy Node-Red using the local-path-provisioner 
-
-
-
-
-
 
 
 
