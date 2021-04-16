@@ -55,7 +55,7 @@ Click on Values YAML and change/add the following items
 
 <img src="../../assets/Deploy-Node-Red-3-deployed.png" width="900">
 
-### 6) Locate the Node-Red Server
+### 6) Locate the Node-Red Service
 
     Cluster Explorer -> Services
 
