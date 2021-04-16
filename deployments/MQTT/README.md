@@ -23,9 +23,6 @@ There are 2 methods provided to install MQTT, the Easy Method with Rancher and H
 You should now see the k8s-at-home Repo
 
 
-
-
-
 ### 3) Select Charts - You should now see Mosquitto as an available Chart
 
 <img src="../../assets/Deploy-mosquitto-1-app.png" width="400">

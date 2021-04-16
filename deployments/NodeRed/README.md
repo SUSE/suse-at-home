@@ -1,12 +1,64 @@
 ## Configuring Node Red with Storage
 
-In this lab, we are going to install Node Red running as a Deployment using the Local Storage Provider for Storage
+In this lab we are going to install and configure Node-Red using the Local Storage Provider for Storage Workload to run on k3s or RKE cluster
 
-There are 2 installation met
+There are 2 methods provided to install Node-Red, the Easy Method with Rancher and Helm, or the Manual Method which include the needed yaml files. 
 
 Prerequisites:
      Raspberry Pi running SLES 15 SP2
      K3s installed
+
+# Easy Method via Rancher and Helm
+
+### 1) Add k8s-at-home Repo (if not already defined)
+
+    Select App & Marketplace -> Chart Repositories
+<img src="../../assets/Rancher-ChangetoApps.gif" width="300">
+
+
+### 2) Click Create to define a new Chart Repository
+    
+    Name: k8s-at-home
+    Index url: https://k8s-at-home.com/charts/
+    
+<img src="../../assets/Rancher-addHelmRepo-k8s-at-home.gif" width="600">
+
+You should now see the k8s-at-home Repo
+
+
+### 3) Select Charts - You should now see Node-Red as an available Chart
+
+<img src="../../assets/Deploy-Node-Red-1-app.png" width="400">
+
+
+### 4) Install Node-Red 
+
+
+Click on Values YAML and change the following items
+    
+    service:
+      type: LoadBalancer
+<img src="../../assets/Deploy-Node-Red-2-installHelm.png" width="600">
+
+
+### 5) Press Install and watch it deploy
+
+<img src="../../assets/Deploy-Node-Red-3-deployed.png" width="900">
+
+
+
+
+# Manual Method 
+
+### 1) Deploy Node-Red using the local-path-provisioner 
+
+
+
+
+
+
+
+
 
 ### Deploy Node-Red using the local-path-provisioner on K3s & create a service to expose the deployment
 

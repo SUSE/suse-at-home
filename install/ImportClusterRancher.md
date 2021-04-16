@@ -1,8 +1,6 @@
-## Installing RKE on SLES from Rancher
+# Installing RKE on SLES from Rancher
 
-### At the end of the Lab you will have:
-
-- A New RKE instance running on SLES 15 SP2
+At the end of the Lab you will have an RKE instance running on SLES 15 SP2
 
 ### Prerequisites:
 
@@ -11,14 +9,14 @@
 - Tux user
 - SSH Keys copied between Rancher Server and SLES 15 SP2 server
 
-### Installation on RKE on SLES 15 SP2
+## Installation on RKE on SLES 15 SP2
 #### Step by Step Instructions
 
-    Hover over the top left dropdown, then click Global
+1) Hover over the top left dropdown, then click Global
 <img src="../assets/Core-Lab-InstallRKEfromRancher-1-Select-Global.png" width="300">
 
 
-    Click Add Cluster
+2)Click Add Cluster
         * The current context is shown in the upper left, and should say 'Global'
         * Note the multiple types of Kubernetes cluster Rancher supports. We will be using Custom for this lab, but there are a lot of possibilities with Rancher.
 <img src="../assets/Core-Lab-InstallRKEfromRancher-2-Add-Cluster.png" width="600">
