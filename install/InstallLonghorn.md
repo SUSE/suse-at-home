@@ -26,7 +26,7 @@
 ### 3) From the Charts Menu, select Longhorn
 
 
-<img src="../assets/Longhorn-3-charts.png" width="800">
+<img src="../assets/Longhorn-3-Charts.png" width="800">
 
 
 ### 4) OPTIONAL - If you want to change the default path used by Longhorn click 'Customize Default Settings'
