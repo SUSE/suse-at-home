@@ -55,14 +55,16 @@ Power On the Pi and compare look at the boot screen. It shoud look simular to th
 
 # Making the USB Boot Disk
 
-### 1) Download the latest Raspberry Pi Firmware
+
+### 1) Burn SLES15-SP2-JeOS.aarch64-15.2-RaspberryPi-QU1.raw.xz to a USB Drive
+
+Burn SLE15 image to the USB Disk with the same method you used to burn the image to an SDCard.
+
+### 2) Mount the EFI partition on the USB disk you just burned  (if it was unmounted during the burn process)
+
+### 3) Download the latest Raspberry Pi Firmware
 Download https://github.com/raspberrypi/firmware
 
-### 2) Burning the image to an USB disk
-
-Burn this image to the USB Disk with the same method you used to burn the image to an SDCard.
-
-### 3) Mount the EFI partition (if it was unmounted during the burn process)
 
 ### 4) update Firmware on USB disk
 
