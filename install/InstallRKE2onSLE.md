@@ -1,43 +1,52 @@
-### RKE2 setup on SLES15 SP2
-Adapted from https://docs.rke2.io/install/quickstart/
-#### Requires at least 1 SLE15 SP2 machine.
-Requires unique hostnames or the node-name parameter set in /etc/rancher/rke2/config.yaml
+# Installing RKE2
 
-Multiple nodes require several TCP/UDP ports to be configured properly. Refer to the docs link above for details.
+### Prerequisites:
 
-##### Download and install RKE2
-In SLES this script will download the RKE2 tarballs, extract in a /tmp directory and subsequently copied to their final locations
+* Server running a SUSE OS
+    * Hostname assigned 
+    * DNS setup
+
+
+# Download and install RKE2
+
+
+
+### 1) Run install command
+
+This script will download the RKE2 tarballs, extract in a /tmp directory and subsequently copied to their final locations
 
 ```
 curl -sfL https://get.rke2.io |sh -
 ```
 
-##### Enable the service
+### 2) Enable the service
 This will enable the service installed via the shell script run previously.
 
 ```
 systemctl enable --now rke2-server.service
 ```
 
-##### Follow the logs
+#### view the  the logs
 If you want to follow the install after enabling the service use the command;
 ```
 journalctl -u rke2-server -f
 ```
+# Optional - Add worker nodes
 
-##### Copy the server token
-You will need to copy this token to the clipboard (or have available) in order to add other servers or agents
+### 1) Copy the server token
+Copy this token from the RKE node you just installed to the clipboard (or have available) in order to add other servers or agents
 
 ```
 cat /var/lib/rancher/rke2/server/node-token
 ```
 
-##### Add worker nodes
+### 2) Setup environment variable for the token
+
 Use the variable below to install an agent (worker) node
 ```
 curl -sfL https://get.rke2.io | INSTALL_RKE2_TYPE="agent" sh -
 ```
-##### Configure the agent service
+### 3) Configure the agent service
 Put the IP Address of the server node and paste the token copied above
 ```
 mkdir -p /etc/rancher/rke2
@@ -45,20 +54,20 @@ vim /etc/rancher/rke2/config.yaml
 server: https://server.node:9345
 token: <node-token>
 ```
-##### Start and enable the service
+### 4) Start and enable the service
 ```
 systemctl enable --now rke2-agent.service
 ```
 
-#### Follow the logs
+### 5) Follow the logs
 ```
 journalctl -u rke2-agent -f
 ```
-##### Export the kubeconfig variable and add kubectl to your path
+### 6) Export the kubeconfig variable and add kubectl to your path
 ```
 export KUBECONFIG=/etc/rancher/rke2/rke2.yaml  PATH=$PATH:/var/lib/rancher/rke2/bin
 ```
-##### use kubectl to verify k8s is running
+###  7) use kubectl to verify k8s is running
 ```
 kubectl get pods -A
 ```

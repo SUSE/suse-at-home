@@ -1,16 +1,19 @@
-### Setup cloud-init for KVM
+# Setup cloud-init for KVM
 
-#### This doc will outline how to setup a KVM instance from the SLE15SP2 JeOS Openstack image
+### At the end of the Lab you will have:
+- SLE 15 SP2 JeOS Instance running under KMV
 
-On the host create a new directory in your kvm images default directory
+# Install SLE
+
+### 1) On the host create a new directory in your kvm images default directory
 ```
 mkdir /var/lib/libvirt/images/<vmName>
 ```
-Change to that directory
+### 2) Change to that directory
 ```
 cd /var/lib/libvirt/images/<vmName>
 ```
-Create meta-data file
+### 3) Create meta-data file
 ```
 vi meta-data
 ```
@@ -23,8 +26,8 @@ Save and close
 ```
 :wq
 ```
-We need to modify the image so we can login (among other things)
-Let's create a user-data file
+### 4) Modify the image so we can login (among other things)
+**Create a user-data file**
 ```
 vi user-data
 ```
@@ -87,13 +90,17 @@ Save this file
 ```
 :wq
 ```
+### 5) Write the iso
+
 ```
 genisoimage -output ci.iso -volid cidata -joliet -rock user-data meta-data
 ```
+
+### 6) Write cidata
 ```
 mkisofs -J -l -R -V "cidata" -iso-level 4 -o ci.iso user-data meta-data
 ```
-boot the image
+### 7) Boot the image
 ```
 qemu-kvm -name <vmname> \
  -m 8096 \

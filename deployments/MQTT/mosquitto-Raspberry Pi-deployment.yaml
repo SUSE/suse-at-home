@@ -38,4 +38,4 @@ spec:
 #            claimName: local-path-pvc
 #        - name: mqtt-config
 #          persistentVolumeClaim:
-#             claimName: local-path-pvc
+#             claimName: local-path-pvc#

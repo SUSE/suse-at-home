@@ -1,0 +1,5 @@
+#!/bin/sh
+# combustion: network
+systemctl enable sshd.service
+systemctl enable --now cockpit.socket
+zypper --non-interactive install vim-small nfs-client bash-completion

@@ -1,12 +1,20 @@
-### Quick install of Rancher latest
+# Quick install of Rancher latest using Docker
 
-This lab is a quick install of Rancher using docker.
+### At the end of the Lab you will have:
+* Rancher running in Docker
 
-Requires:
+### Prerequisites:
+
+- SUSE OS install
+- Docker install and running
+
 - <a href="InstallSLESonx86.md">SLES15 SP2 with Docker ready</a>
 
-This command will download and run the rancher installer
-Then install K3s and run Rancher server
+
+
+# Installing Rancher in docker
+
+### 1) run docker command
 ```
 sudo docker run --privileged -d --restart=unless-stopped \
 -p 80:80 -p 443:443 \
