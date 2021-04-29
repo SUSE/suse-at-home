@@ -8,6 +8,8 @@ In this lab, we are going to install and configure the Environment Sensor to pus
   - Kubernetes 
   - MQTT Server deployed
     - IP address of MQTT Service
+  - Node Red Deployed
+    - 
 
 # Download and install M5 Software on your Desktop
 

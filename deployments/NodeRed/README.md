@@ -41,6 +41,8 @@ Click on Values YAML and change/add the following items
  
     env:
       NODE_RED_ENABLE_PROJECTS: true
+      GUID: "1000"
+      PUID: "1000"
 
     persistence:
       data:      
