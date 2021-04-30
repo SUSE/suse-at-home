@@ -66,16 +66,16 @@ In this lab, we are going to install and configure the Environment Sensor to pus
 
 
 
-# Deploy NodeRed noderred-mqtt-env-dashboard-flows
+# Deploy NodeRed nodered-mqtt-env-dashboard-flows
 
 ### 1) In a browser, Go to you NodeRed  you nodered console [10.0.9.102:1880]
 
-### 2) Open the Hamberger menu -> Manage palatte -> Install
+### 2) Open the Hamberger menu -> Manage pallate -> Install
 
 <img src="../../assets/Deploy-M5Stack-5-NR-manage.gif" width="400">
 
 
-### 3) Install the foloowing pallets
+### 3) Install the following pallets
 
   - node-red-dashboard
   - node-red-contrib-ui-level
@@ -89,4 +89,4 @@ In this lab, we are going to install and configure the Environment Sensor to pus
 
 ### 6) Deploy
 
-### 5) Access the Dashboard from a browserttp://10.0.9.102:1880/ui/
+### 5) Access the Dashboard from a browser http://10.0.9.102:1880/ui/
