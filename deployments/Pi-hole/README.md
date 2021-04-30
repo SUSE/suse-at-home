@@ -1,6 +1,6 @@
 ## Deploying Pi-hole
 
-In this lab, we are going to Deploy Ph-hole
+In this lab, we are going to deploy Pi-hole
 
 ## Prerequisites:
  - running Rancher Server
