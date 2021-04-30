@@ -26,10 +26,12 @@ There are 2 methods provided to install MQTT, the Easy Method with Rancher and H
     
 <img src="../../assets/Rancher-addHelmRepo-k8s-at-home.gif" width="600">
 
-You should now see the k8s-at-home Repo
+### You should now see the k8s-at-home Repo
 
 
 ### 3) Select Charts - You should now see Mosquitto as an available Chart
+
+
 
 <img src="../../assets/Deploy-mosquitto-1-app.png" width="400">
 
@@ -53,28 +55,29 @@ Click on Values YAML and change the following items
 
 # Manual Method 
 
-### 1) Deploy MQTT using the local-path-provisioner 
+### 1) Deploy Mosquitto using the local-path-provisioner 
 
 For x86
 
-    kubectl create -f nodered-deployment.yaml
+    kubectl create -f mosquitto-deployment.yaml
 For Raspberry Pi
 
-    kubectl create -f nodered-Raspberry-Pi-deployment.yaml
+    kubectl create -f mosquitto-Raspberry-Pi-deployment.yaml
+    
 ### 2) Deploy the Service
 
-    kubectl create -f nodered-service-lb.yaml
+    kubectl create -f mosquitto-service.yaml
 
 
-### 3) Locate IP address of Node-Red
+### 3) Locate IP address of Mosquitto
 
-    kubectl get svc -n nodered
+    kubectl get svc  mosquitto
 
 Example:
 
-```
-NAME      TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
-mqtt   LoadBalancer   10.43.233.129   10.0.11.102   80:31063/TCP   8m33s
-```
 
-This example tells us that Node-Red is now available on 10.0.11.102 on port 1883
+    NAME        TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+    mosquitto   LoadBalancer   10.43.175.123   10.0.9.102    1883:30690/TCP   87s
+
+
+This example tells us that Mosquitto is now available on 10.0.9.102 on port 1883

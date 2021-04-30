@@ -9,7 +9,7 @@ In this lab, we are going to install and configure the Environment Sensor to pus
   - MQTT Server deployed
     - IP address of MQTT Service
   - Node Red Deployed
-    - 
+
 
 # Download and install M5 Software on your Desktop
 
@@ -63,3 +63,30 @@ In this lab, we are going to install and configure the Environment Sensor to pus
 ### 4) Download to 5Stick
 
 <img src="../../assets/Deploy-M5Stack-4-UI-Flow-download.gif" width="400">
+
+
+
+# Deploy NodeRed noderred-mqtt-env-dashboard-flows
+
+### 1) In a browser, Go to you NodeRed  you nodered console [10.0.9.102:1880]
+
+### 2) Open the Hamberger menu -> Manage palatte -> Install
+
+<img src="../../assets/Deploy-M5Stack-5-NR-manage.gif" width="400">
+
+
+### 3) Install the foloowing pallets
+
+  - node-red-dashboard
+  - node-red-contrib-ui-level
+
+### 4) Import mqtt-nodered-temp-dashboard-flows.flow into node red
+
+### 5) Update your MQTT Server
+
+<img src="../../assets/Deploy-M5Stack-6-mqtt-manage.gif" width="400">
+
+
+### 6) Deploy
+
+### 5) Access the Dashboard from a browserttp://10.0.9.102:1880/ui/
