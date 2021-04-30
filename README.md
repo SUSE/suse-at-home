@@ -111,7 +111,7 @@ Mounting NFS in a Deployment
 from being displayed on the devices on your network. It uses DNS sinkholing and blocklists as a way of stopping internet
 ads, malware, malvertising, etc. 
 
-<a href="deployments/Pi-MQTT">MQTT</a> - Simple, light weight publish/subscribe message bus
+<a href="deployments/MQTT">MQTT</a> - Simple, light weight publish/subscribe message bus
 
 <a href="deployments/NodeRed">NodeRed</a> - Browser based Development Enviroment that make it easy to connect various 
 things together
