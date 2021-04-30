@@ -42,8 +42,10 @@ Install K3s on Raspberry Pi
 ### Install SLES
     Pick one of the methods below to install SLES
 
-- <a href="install/InstallSLESonx86.md">Installation of SLES15 SP2 on  x86_64</a>
+- <a href="install/InstallSLESonx86.md">Installation of SLES15 SP2 on x86_64</a>
 - <a href="install/InstallSLESonRPi.md">Installation of SLES15 SP2 on Raspberry Pi/aarch64</a>
+
+- <a href="install/InstallSLESonRPi-USB.md">Installation and booting of SLES15 SP2 on x86_64 using USB</a>
 
 - <a href="install/InstallSLE15-JeOS-KVM-Cloud-init.md">Setup cloud-init for KVM installs</a>
 - <a href="https://github.com/zoopster/junk/tree/master/tf-sles15-cloudinit">Terraform install of SLES on KVM</a>
