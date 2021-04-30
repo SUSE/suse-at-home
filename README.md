@@ -91,7 +91,7 @@ Install K3s on Raspberry Pi
 
 <a href="install/InstallLonghorn.md">Longhorn </a>- highly available persistent block storage for your Kubernetes workloads
 
-<a href="install/deployments/localStorage">Configure local storage (K3s)</a>
+<a href="deployments/localStorage">Configure local storage (K3s)</a>
 
 Mounting NFS in a Deployment
 
