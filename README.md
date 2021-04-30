@@ -111,9 +111,8 @@ ads, malware, malvertising, etc.
 
 <a href="deployments/Pi-MQTT">MQTT</a> - Simple, light weight publish/subscribe message bus
 
-<a href="deployments/NodeRed">NodRed</a> - Browser based Development Enviroment that make it easy to connect various 
+<a href="deployments/NodeRed">NodeRed</a> - Browser based Development Enviroment that make it easy to connect various 
 things together
 
-
-
+<a href="deployments/InstallM5Stick">Install M5Stick</a> - Configuration and tools to setup your M5Stick
 
