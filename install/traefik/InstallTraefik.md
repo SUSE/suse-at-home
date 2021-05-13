@@ -14,7 +14,7 @@ In this Lab you will install and configure Traefik to help with incomming (ingre
 
 ### 1) Create traefik Namespace
 
-<img src="../../assets/Traefik-Install-1-Namespace.gif" width="500">
+<img src="../../assets/Traefik-Install-1-Namespace.gif" width="800">
 
 ### 2) Select Charts Repo
 

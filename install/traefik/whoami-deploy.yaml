@@ -7,6 +7,7 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   name: whoami
+  namespace: who
   labels:
     app: whoami
 spec:
