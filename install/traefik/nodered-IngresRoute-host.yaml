@@ -13,5 +13,5 @@ spec:
   - match: Host(`nodered`)
     kind: Rule
     services:
-    - name: nr1-node-red
+    - name: node-red
       port: 1880
