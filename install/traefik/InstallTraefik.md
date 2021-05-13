@@ -14,19 +14,19 @@ In this Lab you will install and configure Traefik to help with incomming (ingre
 
 ### 1) Create traefik Namespace
 
-<img src="../assets/Traefik-Install-1-Namespace.gif" width="300">
+<img src="../../assets/Traefik-Install-1-Namespace.gif" width="300">
 
 ### 2) Select Charts Repo
 
     Select App & Marketplace -> Chart Repositories
-<img src="../assets/Rancher-ChangetoApps.gif" width="300">
+<img src="../../assets/Rancher-ChangetoApps.gif" width="300">
 
 ### 3)    Click Create to define a new Chart Repository
     
     Name: Traefik
     Index url: https://helm.traefik.io/traefik
     
-<img src="../assets/Traefik-Install-1-repos.gif
+<img src="../../assets/Traefik-Install-1-repos.gif
 " width="800">
 
     You should see now see the Traefik Repo
