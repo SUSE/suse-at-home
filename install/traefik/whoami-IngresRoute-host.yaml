@@ -1,0 +1,16 @@
+# IngresRoute
+---
+kind: IngressRoute
+apiVersion: traefik.containo.us/v1alpha1
+metadata:
+  name: whoami
+  namespace: who3
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: Host(`who.wiredquill.com`)
+    kind: Rule
+    services:
+    - name: whoami
+      port: 80

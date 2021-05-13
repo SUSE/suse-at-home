@@ -1,0 +1,16 @@
+# IngresRoute
+---
+kind: IngressRoute
+apiVersion: traefik.containo.us/v1alpha1
+metadata:
+  name: whoami
+  namespace: who2
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: Path(`/who`)
+    kind: Rule
+    services:
+    - name: whoami
+      port: 80
