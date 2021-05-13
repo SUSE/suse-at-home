@@ -30,6 +30,7 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
+  namespace: who
   name: whoami
 spec:
   type: LoadBalancer

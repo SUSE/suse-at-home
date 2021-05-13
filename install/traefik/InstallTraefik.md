@@ -45,7 +45,7 @@ In this Lab you will install and configure Traefik to help with incomming (ingre
 ### 2) Deploy Traefik
     
     Select the Namespace traefik
-    Name the Deploymen trefik 
+    Name the Deployment traefik 
 <img src="../../assets/Traefik-Install-5-Deploy.gif" width="900">
 
 

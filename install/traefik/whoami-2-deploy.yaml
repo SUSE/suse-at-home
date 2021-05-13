@@ -30,6 +30,7 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
+  namespace: who2
   name: whoami
 spec:
   type: ClusterIP
