@@ -1,0 +1,17 @@
+# IngresRoute
+---
+kind: IngressRoute
+apiVersion: traefik.containo.us/v1alpha1
+metadata:
+  name: node-red
+  namespace: nodered
+
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: Path(`/nodered`)
+    kind: Rule
+    services:
+    - name: nr1-node-red
+      port: 1880
