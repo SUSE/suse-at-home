@@ -1,6 +1,6 @@
 # Installing and Configuring Metal LB
 
-### At the end of the Lab you will have:
+At the end of the Lab you will have:
 * MetalLB installed and configure 
 
 ### Prerequisites:
