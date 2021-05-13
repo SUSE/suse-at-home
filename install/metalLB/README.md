@@ -6,15 +6,25 @@ At the end of the Lab you will have:
 ### Prerequisites:
 
 - Kubernetes Cluster
+- K3s - traefik Disabled (see below for instructions
+
+
+### Stop in ny running K3s started with --disable=traefik or delete the helm deployment 
+  
+  For Example 
+
+    curl -sfL https://get.k3s.io | K3S_KUBECONFIG_MODE=0644 sh -s - --disable=traefik
+
 
 # Install MetalLB     
+
 
 ### 1) Create a namespace for Metal LB
 ```
 kubectl create namespace metallb-system
 ```
 
-### 2) Create a metallb-config.yml file
+### 2) Create a metallb-config.yaml file
 Ensure the addresses match the available addresses in your configuration
 Edit or create a metallb-config.yml with the following entries
 
@@ -36,7 +46,7 @@ data:
 ```
 
 ```
-kubectl apply -f metallb-config.yml
+kubectl apply -f metallb-config.yaml
 ```
 ### 3) Download and deploy metallb.yaml 
 
