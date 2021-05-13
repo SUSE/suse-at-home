@@ -10,7 +10,7 @@ spec:
   entryPoints:
     - web
   routes:
-  - match: Host(`nodered`)
+  - match: Host(`nodered.wiredquill.com`)
     kind: Rule
     services:
     - name: node-red
