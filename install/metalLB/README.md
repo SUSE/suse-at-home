@@ -1,19 +1,19 @@
 # Installing and Configuring Metal LB
 
 At the end of the Lab you will have:
-* MetalLB installed and configure 
+* MetalLB installed and configured 
 
 ### Prerequisites:
 
 - Kubernetes Cluster
-- K3s - traefik Disabled (see below for instructions)
+- K3s - traefik and klipper (servicelb) disabled (see below for instructions)
 
 
-### K3s Installs Traefik 1.8) by default.  You can stop Traefik from installing with '--disable=traefik' during your k3s install or delete the helm deployment 
+### K3s Installs Traefik 1.8) by default.  You can stop Traefik from installing with '--disable=traefik' during your k3s install or delete the helm deployment. You also need to disable the service loadbalancer (klipper) using '--disable=servicelb'
   
   For Example 
 
-    curl -sfL https://get.k3s.io | K3S_KUBECONFIG_MODE=0644 sh -s - --disable=traefik
+    curl -sfL https://get.k3s.io | K3S_KUBECONFIG_MODE=0644 sh -s - --disable=traefik --disable=servicelb
 
 
 # Install MetalLB     
