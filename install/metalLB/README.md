@@ -6,10 +6,10 @@ At the end of the Lab you will have:
 ### Prerequisites:
 
 - Kubernetes Cluster
-- K3s - traefik Disabled (see below for instructions
+- K3s - traefik Disabled (see below for instructions)
 
 
-### Stop in ny running K3s started with --disable=traefik or delete the helm deployment 
+### K3s Installs Traefik 1.8) by default.  You can stop Traefik from installing with '--disable=traefik' during your k3s install or delete the helm deployment 
   
   For Example 
 
