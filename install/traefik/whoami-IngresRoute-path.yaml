@@ -4,7 +4,7 @@ kind: IngressRoute
 apiVersion: traefik.containo.us/v1alpha1
 metadata:
   name: whoami
-  namespace: who2
+  namespace: who3
 spec:
   entryPoints:
     - web
