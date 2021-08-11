@@ -51,7 +51,7 @@ kubectl apply -f metallb-config.yaml
 ### 3) Download and deploy metallb.yaml 
 
 ```
-kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.5/manifests/metallb.yaml
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.10.2/manifests/metallb.yaml
 ```
 Example
 ```
