@@ -87,3 +87,125 @@ Enable ports->traefik->expose
 
 <img src="../../assets/Traefik-Install-8-Dashboard.png" width="800">
 
+
+# Testing Traefik
+
+## Traefik using a Host name
+
+### 1) config and verify DNS entry for who.{yourdomain}.com is pointing to the IP Address of your Traefik Service
+        In my example I have who.wiredquill.com at 10.0.22.1
+
+### 2) Deploy whoami app using Trafik host name
+```
+kubectl apply -f whoami-deploy-host.yaml
+```
+
+Example
+```
+namespace/who2 created
+deployment.apps/whoami created
+service/whoami created
+```
+
+### 3) Deploy Ingres Route Rule for host
+
+```
+kubectl apply -f whoami-IngresRoute-host.yaml
+```
+
+Example
+```
+ingressroute.traefik.containo.us/whoami created
+```
+
+### 4) View the change in Routers in the Traefik Dashboard
+
+<img src="../../assets/Traefik-Install-9-VerifyHost.gif" width="800">
+
+### 5) Test whoami App
+
+```
+Open a browser to http://who.wiredquill.com
+```
+
+Example
+```
+Hostname: whoami-6fb5b5d74d-4ghdb
+IP: 127.0.0.1
+IP: ::1
+IP: 10.42.0.12
+IP: fe80::94ea:30ff:fead:3a82
+RemoteAddr: 10.42.0.11:34586
+GET / HTTP/1.1
+Host: who.wiredquill.com
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Safari/605.1.15
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding: gzip, deflate
+Accept-Language: en-us
+Upgrade-Insecure-Requests: 1
+X-Forwarded-For: 10.42.0.1
+X-Forwarded-Host: who.wiredquill.com
+X-Forwarded-Port: 80
+X-Forwarded-Proto: http
+X-Forwarded-Server: traefik-10-1628783659-7976cbf877-mxfqs
+X-Real-Ip: 10.42.0.1
+```
+
+## Traefik using a Path
+
+
+### 1) Deploy whoami app using Trafik host name
+```
+kubectl apply -f whoami-deploy-path.yaml
+```
+
+Example
+```
+namespace/who3 created
+deployment.apps/whoami created
+service/whoami created
+```
+
+### 2) Deploy Ingres Route Rule for host
+
+```
+kubectl apply -f whoami-IngresRoute-path.yaml
+```
+
+Example
+```
+ingressroute.traefik.containo.us/whoami created
+```
+
+### 3) View the change in Routers in the Traefik Dashboard
+
+<img src="../../assets/Traefik-Install-10-VerifyPath.gif" width="800">
+
+### 5) Test whoami App
+
+```
+Open a browser to the IP Addess of you Traefik service http://10.0.22.1/who
+```
+
+Example
+```
+Hostname: whoami-6fb5b5d74d-hcrhc
+IP: 127.0.0.1
+IP: ::1
+IP: 10.42.0.13
+IP: fe80::843e:58ff:fe0c:a720
+RemoteAddr: 10.42.0.11:51434
+GET /who HTTP/1.1
+Host: 10.0.23.100
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Safari/605.1.15
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding: gzip, deflate
+Accept-Language: en-us
+Upgrade-Insecure-Requests: 1
+X-Forwarded-For: 10.42.0.1
+X-Forwarded-Host: 10.0.23.100
+X-Forwarded-Port: 80
+X-Forwarded-Proto: http
+X-Forwarded-Server: traefik-10-1628783659-7976cbf877-mxfqs
+X-Real-Ip: 10.42.0.1
+```
