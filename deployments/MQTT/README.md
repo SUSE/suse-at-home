@@ -42,7 +42,8 @@ There are 2 methods provided to install MQTT, the Easy Method with Rancher and H
 Click on Values YAML and change the following items
     
     service:
-      type: LoadBalancer
+      main:
+        type: LoadBalancer
 <img src="../../assets/Deploy-mosquitto-2-installHelm.png" width="600">
 
 

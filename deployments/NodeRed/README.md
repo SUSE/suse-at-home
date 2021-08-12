@@ -40,7 +40,11 @@ You should now see the k8s-at-home Repo
 Click on Values YAML and change/add the following items
  
     env:
+      FLOWS: flows.json
+      NODE_OPTIONS: null
       NODE_RED_ENABLE_PROJECTS: true
+      NODE_RED_ENABLE_SAFE_MODE: null
+      TZ: UTC
       GUID: "1000"
       PUID: "1000"
 
@@ -51,7 +55,12 @@ Click on Values YAML and change/add the following items
        size: 1Gi
     
     service:
-      type: LoadBalancer
+      main:
+        type: LoadBalancer
+        ports:
+          http:
+            port: 1880
+      
 
 <img src="../../assets/Deploy-Node-Red-2-installHelm-zoom.png" width="800">
 
