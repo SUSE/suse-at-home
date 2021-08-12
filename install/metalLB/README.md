@@ -21,7 +21,7 @@ At the end of the Lab you will have:
 
 ### 1) Create a namespace for Metal LB
 ```
-kubectl create namespace metallb-system
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.10.2/manifests/namespace.yaml
 ```
 
 ### 2) Create a metallb-config.yaml file
@@ -71,11 +71,44 @@ daemonset.apps/speaker created
 deployment.apps/controller created
 ```
 
-### 4) Create secret (on run once)
+# Testing Metal LB
+
+### 1) Deploy whoami app using Metallb
 ```
-kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)"
+kubectl apply -f whoami-deploy.yaml
 ```
+
+### 2) Locate the IP of the whoami service
+
+```
+kubectl get svc -A
+```
+
 Example
 ```
-secret/memberlist created
+who    whoami  LoadBalancer   10.43.21.89     10.0.24.101   80:31247/TCP
+```
+
+### 3) Test whoami App
+
+```
+Open a browser to http://10.0.24.101
+```
+
+Example
+```
+Hostname: whoami-6fb5b5d74d-ln65d
+IP: 127.0.0.1
+IP: ::1
+IP: 10.42.0.14
+IP: fe80::c803:2eff:fee7:88a2
+RemoteAddr: 10.42.0.1:46713
+GET / HTTP/1.1
+Host: 10.0.24.101
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Safari/605.1.15
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding: gzip, deflate
+Accept-Language: en-us
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
 ```
