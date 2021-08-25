@@ -8,7 +8,7 @@ In this lab, we are going to deploy Pi-hole
 
 ## Step by Step Instructions
 
-### (Optional) - If you are ussing Traefik Change the ports Traefik is ussing to 81 and 444
+### (Optional) - If you are using Traefik Change the ports Traefik is ussing to 81 and 444
 
     Select Cluster Explorer -> Services
 <img src="../../assets/DeployPi-hole-LoadBalancer-1-Traefik-Select.png" width="900">
