@@ -8,7 +8,7 @@ to run the following commands
 
 ##### Download and install the rancherd binary
 ```
-curl -sfL https://get.rancher.io |sh -
+curl -sfL https://get.rke2.io | sh -
 ```
 
 ##### Enable and start the service
