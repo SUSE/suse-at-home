@@ -38,7 +38,7 @@ sudo chmod +x /usr/local/bin/kubectl
 
 ### 3) Want to add bash completion?
 ```
-kubectl completion bash >/etc/bash_completion.d/kubectl
+(As root, or sudo -i) kubectl completion bash >/etc/bash_completion.d/kubectl
 ```
 Logout and log back in to activate.
 
