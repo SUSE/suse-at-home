@@ -86,13 +86,13 @@ kubectl get svc -A
 
 Example
 ```
-who    whoami  LoadBalancer   10.43.21.89     10.0.24.101   80:31247/TCP
+who    whoami  LoadBalancer   10.43.21.89     10.0.0.100   80:31247/TCP
 ```
 
 ### 3) Test whoami App
 
 ```
-Open a browser to http://10.0.24.101
+Open a browser to http://10.0.0.100
 ```
 
 Example
