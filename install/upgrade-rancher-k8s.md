@@ -40,7 +40,7 @@ Created symlink /etc/systemd/system/multi-user.target.wants/k3s.service → /etc
 
 # Upgrade RKE
 
-### 1) Download the latest RKE Binary and copy it to 
+### 1) Use the instructions in the link below to download the latest RKE Binary and copy it to /usr/local/bin
     
     https://rancher.com/docs/rke/latest/en/installation/#download-the-rke-binary
 
@@ -72,11 +72,11 @@ rancher-latest	https://releases.rancher.com/server-charts/latest
 
 # Upgrade Rancher
 
-### 1) Run the command you ran to install Rancher with the word 'upgrade' replacing the work install
+### 1) Run the command you ran to install Rancher with the word 'upgrade' replacing the word install
 
 ```
 helm install rancher rancher-latest/rancher --namespace cattle-system --set hostname=node-1.wiredquill.com --set replicas=1 --set bootstrapPassword=admin 
 ```
-### 2) If you don't recal the values you used you can get them with the command below
+### 2) If you don't recall the values you used you can get them with the command below
 
     helm get values rancher -n cattle-system
