@@ -75,7 +75,7 @@ rancher-latest	https://releases.rancher.com/server-charts/latest
 ### 1) Run the command you ran to install Rancher with the word 'upgrade' replacing the word install
 
 ```
-helm install rancher rancher-latest/rancher --namespace cattle-system --set hostname=node-1.wiredquill.com --set replicas=1 --set bootstrapPassword=admin 
+helm upgrade rancher rancher-latest/rancher --namespace cattle-system --set hostname=yourhost.fqdn --set replicas=1 
 ```
 ### 2) If you don't recall the values you used you can get them with the command below
 
