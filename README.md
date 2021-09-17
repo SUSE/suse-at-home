@@ -77,10 +77,13 @@ Install K3s on Raspberry Pi
   - <a href="install/InstallRancher-Docker.md">Quick install of Rancher using docker</a>
   - <a href="install/InstallRancher-Rancherd.md">Quick install of Rancher on RKE2 using Rancherd</a>
   - <a href="install/InstallRancher-Helm.md">Using helm to install Rancher on k8s</a>
+  - <a href="install/InstallRancher-2_6-Helm.md">Using helm to install Rancher 2.6 on k8s</a>
 
-
+### Upgrade Rancher
 
 ## Configuration of cluster after it's up and running 
+   - <a href="install/upgrade-rancher-k8s.md.md">Upgrading Rancher and K8s</a>
+
 
 ### Networking
 
