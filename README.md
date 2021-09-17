@@ -81,8 +81,10 @@ Install K3s on Raspberry Pi
 
 ### Upgrade Rancher
 
+   - <a href="install/upgrade-rancher-k8s.md">Upgrading Rancher and K8s</a>
+
+
 ## Configuration of cluster after it's up and running 
-   - <a href="install/upgrade-rancher-k8s.md.md">Upgrading Rancher and K8s</a>
 
 
 ### Networking
