@@ -100,7 +100,7 @@ Update Complete. ⎈ Happy Helming!⎈
 
 
 
-### 4) Deploy Rancher via helm
+### 3) Deploy Rancher via helm
 
 ##### (Option 1) Deploy Rancher via helm - Self-signed Cert (we'll setup NON-HA)
 
@@ -118,7 +118,7 @@ helm install rancher rancher-latest/rancher \
 ```
 
 
-##### (Option 2) - deploy Rancher via helm - LetsEncrypt Cert
+##### (Option 2) - Deploy Rancher via helm - LetsEncrypt Cert
 
 Requirements for letsencrypt
 
@@ -147,7 +147,7 @@ helm install rancher rancher-latest/rancher \
 --set bootstrapPassword=admin
 ```
 
-### 5) Verify Rancher is ready
+### 4) Verify Rancher is ready
 ```
 kubectl -n cattle-system rollout status deploy/rancher
 
@@ -155,7 +155,7 @@ Example output
 deployment "rancher" successfully rolled out
 ```
 
-### 6) Verifying letsencrypt cert (if you did option 2 above)
+### 5) Verifying letsencrypt cert (if you did option 2 above)
 
     kubectl -n cattle-system describe issuer
 
@@ -185,5 +185,5 @@ Status:
 Events:                    <none>
 ```
 
-### 7) Troubleshooting 
+### 6) Troubleshooting 
 https://rancher.com/docs/rancher/v2.6/en/installation/resources/troubleshooting/
