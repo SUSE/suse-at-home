@@ -1,8 +1,8 @@
-# Installing SLES 15 SP2 on x86
+# Installing SLES 15 SP3 on x86
 
 ### At the end of the Lab you will have:
 
-- 2x SLES15 SP2 minimal install ready for RKE
+- 2x SLES15 SP3 minimal install ready for RKE
 - 8 GiB RAM (minimally)
 - Bridge Networking to your local network with access to the internet
 - 4 CPU
@@ -13,7 +13,7 @@
 - Containers Module installed
 - yast2, docker, sudo installed
 
-# Download SLE 15 sp2 media
+# Download SLE 15 SP3 media
 
 
 ### 1) Obtain media and registration key from <a href="https://scc.suse.com/admin/products/1939">the SCC</a>
@@ -40,7 +40,7 @@ if you don't see a Registration Code...click the Generate Registration code link
 
 ### 2) Boot off of iso
 
-### 3) Select Install SUSE Linux Enterprise Server 15 SP2
+### 3) Select Install SUSE Linux Enterprise Server 15 SP3
 
 <img src ="../assets/Core-Lab-1-install-1-language.png">
 
@@ -50,7 +50,7 @@ if you don't see a Registration Code...click the Generate Registration code link
 
 Accept additional update repositories from the Registration Server
 
-### 6) Select Containers Module 15 SP2 x86_64
+### 6) Select Containers Module 15 SP3 x86_64
 
 <img src="../assets/Core-Lab-1-install-4-selsect-containers-module.png">
 
