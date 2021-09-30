@@ -18,7 +18,7 @@
 
 ### 1) Obtain media and registration key from <a href="https://scc.suse.com/admin/products/1939">the SCC</a>
 
-### 2) Select the 'Show Download Information" link
+### 2) Select the 'Show installation media" link
 
 <img src="../assets/Core-Lab-1-Show-Download.png">
 
