@@ -1,24 +1,13 @@
 ## Installing NFS Clients so you can deploy pods with NFS mounts within them
 
 ### At the end of the Lab you will have:
-* The NFS client install on any Kubernetes nodes that will run deployments that include NFS mounts
+* The NFS client installed on any Kubernetes nodes that will run deployments that include NFS mounts
 
 ### Prerequisites:
 
   * Existing NFS Server
-NFS Clients
-  * SLES or Leap install
+  * SLES or Leap install on worker Nodes
 
-#### Before you begin you MUST be able to ping your sever via a dns name..
-   This could be done with real DNS, local DNS.
-   You will Not be able to install Rancher without it ...because we will be generating certs
-
-   You should be connected to your RKE server as the 'tux' user
-
-#### Verify DNS works
-```
-ping DNS_name
-```
 
 # Install NFS Client
 
@@ -35,24 +24,25 @@ sudo zypper in nfs-client
 ```
 sudo mkdir /tmp/nfstemp
 
-Example
+
 ```
 
 ### 2) Mount NFS Volume 
 ```
-sudo mount node-6.wiredquill.com:/media /tmp/nfstemp
+sudo mount nfs.xyz.com:/share /tmp/nfstemp
 
 Example
 ```
 
 ### 3) verify mount it correct
 ```
-ls /tmp/nsftemp
-
-or df -h /tmp/nfstemp
-
+df -h /tmp/nfstemp
+```
 
 Example
+```
+Filesystem                    Size  Used Avail Use% Mounted on
+node-6.wiredquill.com:/share   60G  2.5G   56G   5% /tmp/nfstest
 ```
 ### 4) Clean up after test
 ```

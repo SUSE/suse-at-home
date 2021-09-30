@@ -1,71 +1,41 @@
-## Deploying Pi-hole
+## Deploying a test NFS pod
 
-In this lab, we are going to deploy Pi-hole
+In this lab, we are going to deploy a pod to verify that 
 
 ## Prerequisites:
- - running Rancher Server
- - K3s installed on a Raspberry Pi Managed by Rancher
+ - Running Kubernetes Node with NFS client installed
+ - The ability to run kubectl commands
+ - NFS server w/ a share
+ - *Manualy test NFS from each node or your or the deployment will fail
 
-## Step by Step Instructions
+# From a Terminal (Option 1)
 
-### (Optional) - If you are using Traefik Change the ports Traefik is ussing to 81 and 444
+### 1) Deploy nfs-mount-test.yaml 
 
-    Select Cluster Explorer -> Services
-<img src="../../assets/DeployPi-hole-LoadBalancer-1-Traefik-Select.png" width="900">
+```
+kubectl apply -f nfs-mount-test.yaml
+```
 
-    Edit the Traefik Service 
-    
-<img src="../../assets/DeployPi-hole-LoadBalancer-2-Traefik-Edit.png" width="200">
+### 2) Verifiy nfs-verified was created on your NFS server
 
-    Change to ports 81 and 444 and Press Save
-<img src="../../assets/DeployPi-hole-LoadBalancer-3-Traefik-Change-Ports.png" width="800">
+From the NFS Server
 
-    You should see the Service Change
-<img src="../../assets/DeployPi-hole-LoadBalancer-4-Traefik-complete.png" width="800">
+```
+ls /share
+```
 
-###### Add Pi-hole Repo
+Example
+```
+nfs-verified
+```
 
-    Select App & Marketplace -> Chart Repositories
-<img src="../../assets/DeployPi-hole-LoadBalancer-5-Chart-Repos.png" width="200">
+# From Rancher UI (Option 2)
 
-    Click Create to define a new Chart Repository
-    
-    Name: Pihole
-    Index url: https://mojo2600.github.io/pihole-kubernetes/
-    
-<img src="../../assets/DeployPi-hole-LoadBalancer-6-Define-Repo.png" width="800">
+### 1) Import nfs-mount-test.yaml and customize the server settings to match your NFS Server
 
-    You should see now see the Pi-hole Repo
-<img src="../../assets/DeployPi-hole-LoadBalancer-7-Repo-Finished.png" width="900">
+<img src="../../assets/NFS-Example-1-Rancher-Pod-Import.gif" width="600">
 
-    Select Chart 
-    
-    You should now see the option to install pihole
-    
-    Give it a name 
-<img src="../../assets/DeployPi-hole-LoadBalancer-9-Name-Pihole.png" width="900">
+### 2) View the Pod via the Rancher Interface
 
+<img src="../../assets/NFS-Example-2-Rancher-Pod-Verify.gif" width="600">
 
-    Click on Values YAML and change the following items
-    
-    persistentVolumeClaim:
-      enabled: true
-    serviceDns:
-      type: LoadBalancer
-    serviceWeb:
-      type: LoadBalancer
-    
-    
-<img src="../../assets/DeployPi-hole-LoadBalancer-10-Values-Changes.png" width="400">
-
-    Press Install and watch it deploy
-<img src="../../assets/DeployPi-hole-LoadBalancer-11-Deploy.png" width="900">
-
-    Wait a couple of mins for it to deploy then open a browser to http://[Raspberry-Pi-IP]/admin/ 
-<img src="../../assets/DeployPi-hole-LoadBalancer-12-Admin.png" width="900">
-
-    To take advantage of Pi-Hole change your workstation to use your Raspberry Pi's IP address as the DNS Servers
-    
-### Testing Pi-hole
-
-    Open a Browser to https://fuzzthepiguy.tech/adtest/ and see you you see ads.
