@@ -97,9 +97,12 @@ Install K3s on Raspberry Pi
 
 <a href="install/InstallLonghorn.md">Longhorn</a> - highly available persistent block storage for your Kubernetes workloads
 
-<a href="deployments/localStorage">Configure local storage (K3s)</a>
+<a href="install/InstallNFS-Provisioner">Install NFS Provisioner</a>
 
-Mounting NFS in a Deployment
+<a href="install/InstallNFS-Server">Installing NFS Server</a>
+
+<a href="install/InstallNFS-Client">Installing NFS Client on Nodes</a>
+
 
 ## Adding Downstream Clusters to Rancher
 
@@ -124,3 +127,4 @@ things together
 
 <a href="deployments/InstallM5Stick">Install M5Stick</a> - Configuration and tools to setup your M5Stick
 
+<a href="deployments/Novidrome">Install Novidrome</a> - Personal Media Server for stream audio
