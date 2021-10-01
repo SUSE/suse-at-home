@@ -99,9 +99,9 @@ Install K3s on Raspberry Pi
 
 <a href="install/InstallNFS-Provisioner">Install NFS Provisioner</a>
 
-<a href="install/InstallNFS-Server">Installing NFS Server</a>
+<a href="install/InstallNFS-Sever.md">Installing NFS Server</a>
 
-<a href="install/InstallNFS-Client">Installing NFS Client on Nodes</a>
+<a href="install/InstallNFS-Client.md">Installing NFS Client on Nodes</a>
 
 
 ## Adding Downstream Clusters to Rancher
@@ -127,4 +127,4 @@ things together
 
 <a href="deployments/InstallM5Stick">Install M5Stick</a> - Configuration and tools to setup your M5Stick
 
-<a href="deployments/Novidrome">Install Novidrome</a> - Personal Media Server for stream audio
+<a href="deployments/Navidrome">Install Novidrome</a> - Personal Media Server for stream audio
