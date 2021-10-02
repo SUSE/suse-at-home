@@ -40,12 +40,12 @@ ssh-keygen -b 2048 -t rsa -N ""
 Example
 
 Generating public/private rsa key pair.
-Enter file in which to save the key (/root/.ssh/id_rsa):
+Enter file in which to save the key (/home/tux/.ssh/id_rsa):
 Created directory '/root/.ssh'.
-Your identification has been saved in /root/.ssh/id_rsa.
-Your public key has been saved in /root/.ssh/id_rsa.pub.
+Your identification has been saved in /home/tux/.ssh/id_rsa.
+Your public key has been saved in /home/tux/.ssh/id_rsa.pub.
 The key fingerprint is:
-SHA256:EF3Z1mIeoO1zt5EPB7pmheoToy9e9y5D8Hpo3riTvII root@rke-erin-1
+SHA256:EF3Z1mIeoO1zt5EPB7pmheoToy9e9y5D8Hpo3riTvII tux@rke-erin-1
 The key's randomart image is:
 +---[RSA 2048]----+
 |      .. .o+ .   |
