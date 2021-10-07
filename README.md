@@ -9,25 +9,25 @@
 ## Suggested Installation Paths
 
 Production Rancher Installation - SLES+RKE+Rancher
-* <a href="install/InstallSLESonx86.md">Install SLES15 SP2 on x86_64</a>
+* <a href="install/InstallSLESonx86.md">Install SLES15 SP3 on x86_64</a>
 * <a href="install/InstallKubernetesTools.md">Install Kubernetes  Tools</a> 
 * <a href="install/InstallRKEonSLES15x86_64.md">Install RKE on SLES</a> 
 * <a href="install/InstallRancher-Helm.md">Install Rancher using helm</a>
 
 RKE 2 Based Rancher Installation - SLES+RKE2+Rancher
-* <a href="install/InstallSLESonx86.md">Install SLES15 SP2 on x86_64</a>
+* <a href="install/InstallSLESonx86.md">Install SLES15 SP3 on x86_64</a>
 * <a href="install/InstallKubernetesTools.md">Install Helm</a> 
 * <a href="install/InstallRancher-Rancherd.md">Install of Rancher on RKE2 using Rancherd</a>
 
 K3s Rancher Install - SLES+K3s+Rancher
-* <a href="install/InstallSLESonx86.md">Install SLES15 SP2 on x86_64</a>
+* <a href="install/InstallSLESonx86.md">Install SLES15 SP3 on x86_64</a>
 * <a href="install/InstallK3s.md">Install K3s</a>
 * <a href="install/InstallKubernetesTools.md">Install Helm</a> 
 * <a href="install/InstallRancher-Helm.md">Install Rancher using helm</a>
 
 
 Install K3s on Raspberry Pi
-* <a href="install/InstallSLESonRPi.md">Installation of SLES15 SP2 on Raspberry Pi/aarch64</a>
+* <a href="install/InstallSLESonRPi.md">Installation of SLES15 SP3 on Raspberry Pi/aarch64</a>
 * <a href="install/InstallK3s.md">Install K3s</a>
 ## What's here
 
@@ -42,10 +42,10 @@ Install K3s on Raspberry Pi
 ### Install SLES
     Pick one of the methods below to install SLES
 
-- <a href="install/InstallSLESonx86.md">Installation of SLES15 SP2 on x86_64</a>
-- <a href="install/InstallSLESonRPi.md">Installation of SLES15 SP2 on Raspberry Pi/aarch64</a>
+- <a href="install/InstallSLESonx86.md">Installation of SLES15 SP3 on x86_64</a>
+- <a href="install/InstallSLESonRPi.md">Installation of SLES15 SP3 on Raspberry Pi/aarch64</a>
 
-- <a href="install/InstallSLESonRPi-USB.md">Installation and booting of SLES15 SP2 on x86_64 using USB</a>
+- <a href="install/InstallSLESonRPi-USB.md">Installation and booting of SLES15 SP3 on x86_64 using USB</a>
 
 - <a href="install/InstallSLE15-JeOS-KVM-Cloud-init.md">Setup cloud-init for KVM installs</a>
 - <a href="https://github.com/zoopster/junk/tree/master/tf-sles15-cloudinit">Terraform install of SLES on KVM</a>
@@ -56,9 +56,9 @@ Install K3s on Raspberry Pi
 ### Installing Kubernetes
 
 - RKE - Full Blown Kubernetes
-  - <a href="install/InstallRKEonSLES15x86_64.md">Simple single-node RKE install on SLES15 SP2 x86_64</a>
+  - <a href="install/InstallRKEonSLES15x86_64.md">Simple single-node RKE install on SLES15 SP3 x86_64</a>
 - RKE2 (Rancher Government)
-  - <a href="install/InstallRKE2onSLE.md">Install RKE2 (RKE Government) on SLES15 SP2 x86_64</a>
+  - <a href="install/InstallRKE2onSLE.md">Install RKE2 (RKE Government) on SLES15 SP3 x86_64</a>
 - K3s - Lightweight w/ batteries 
   - <a href="install/InstallK3s.md">Install K3s</a>
 
