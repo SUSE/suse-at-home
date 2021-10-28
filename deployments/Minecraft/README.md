@@ -1,25 +1,21 @@
-## Install Minecraft with an nfs mount to your music collection
+## Install Minecraft 
 
-In this lab we are going to install and configure Naidrome Media Streamer. 
+In this lab we are going to install and configure  Minecraft with the option to load custom worlds/maps. 
 
-We will configure nfs to mount your music collection /music within the pod
-
-Optionally you can configure the database to be stored on nfs via the NFS Provisioner
 
 ### Prerequisites:
 
      * Rancher
      * Kubernetes Cluster
-        NFS Provisioner (optional)
-        LoadBalancer - Metallb (Optional)
+        LoadBalancer - Metallb 
 
       * Persistent Storage 
-         For NFS follow ...
+         For our Example we will use the NFS Provisioner.
 
 
 # Install Minecraft
 
-### 1) Add k8s-at-home Repo (if not already defined)
+### 1) Add Minecraft Repo (if not already defined)
 
     Select App & Marketplace -> Chart Repositories
 <img src="../../assets/Rancher-ChangetoApps.gif" width="500">
@@ -27,56 +23,64 @@ Optionally you can configure the database to be stored on nfs via the NFS Provis
 
 ### 2) Click Create to define a new Chart Repository
     
-    Name: k8s-at-home
-    Index url: https://k8s-at-home.com/charts/
+    Name: minecraft
+    Index url: https://itzg.github.io/minecraft-server-charts/
     
-<img src="../../assets/Rancher-addHelmRepo-k8s-at-home.gif" width="800">
+<img src="../../assets/Rancher-addHelmRepo-Minecraft.gif" width="800">
 
-You should now see the k8s-at-home Repo
+You should now see the Minecraft Repo
 
 
 ### 3) Select Charts - You should now see Minecraft as an available Chart
 
-<img src="../../assets/Deploy-Naidrome-1-app.png" width="400">
+<img src="../../assets/Deploy-Minecraft-1-app.png" width="400">
 
 
-### 4) Install Minecraft 
+### 4) Config and Deploy PVC for Minecraft 
 
 
-Click on Values YAML and change/add the following items
+Click on Values YAML and change/add at a Minimum, change the following items
+
+
 
 ``` 
+minecraftServer:
+    eula: 'TRUE'
+    motd: Welcome to Minecraft on Kubernetes!
+  rcon:
+    enabled: true
+    password: CHANGEME!
+    serviceType: LoadBalancer
+  serviceType: LoadBalancer
+
 persistence:
-  config:
-    enabled: false
-    mountPath: /data
-  music:
-    enabled: enable
-    mountPath: /music
-    type: custom
-    volumeSpec:
-      nfs:
-        server: node-6.wiredquill.com
-        path: /share/music 
-    
-service:
-  main:
-  type: LoadBalancer
-    ports:
-      http:
-        port: 4533
+  annotations: {}
+  dataDir:
+    Size: 1Gi
+    enabled: true
+
+resources:
+  requests:
+    cpu: 1000m
+    memory: 1024Mi
+
         
 ```
       
 
 <img src="../../assets/Deploy-Minecraft-2-installHelm.png" width="800">
 
+### 5) Config and Deploy PVC for Minecraft 
 
-### 5) Press Install and watch it deploy
+
+Click on Values YAML and change/add the following items
+
+
+### 6) Press Install and watch it deploy
 
 <img src="../../assets/Deploy-Minecraft-3-deployed.png" width="900">
 
-### 6) Locate the Minecraft Service
+### 7) Locate the Minecraft Service
 
     Cluster Explorer -> Services
 
