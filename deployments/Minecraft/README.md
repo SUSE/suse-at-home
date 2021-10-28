@@ -5,23 +5,39 @@ In this lab we are going to install and configure  Minecraft with the option to 
 
 ### Prerequisites:
 
-     * Rancher
+We are assuming you are running the Equivalent to the SUSE at Home Base which includes the following:
+
+     * Rancher 2.5+ or 2.6+
      * Kubernetes Cluster
-        LoadBalancer - Metallb 
+        LoadBalancer - Metallb
 
       * Persistent Storage 
-         For our Example we will use the NFS Provisioner.
+         Storage Class defined and set as Default Storage Class
+
+# What Version do I want to install?
+
+There are 2 versions of the Minecraft server, Java and Bedrock
+
+Java is the original version and has the most mods, skins and worlds but it only supports Computer based (Java) clients (No consoles). It also has a large variety of options you can tweak (I,E, Hardcore Survival mode) when you launch the server.
+
+Bedrock is was written by Microsoft in 2017 from the ground up. It supports modern console (unlike the Java version). It currently has less mods and worlds but this is quickly changing. It has less options to customize your World on Launch
+
+For additional information check out the link below:
+
+https://www.thegamer.com/minecraft-bedrock-vs-java-comparison/
 
 
-# Install Minecraft
+# Install Minecraft Java Edition
 
-### 1) Add Minecraft Repo (if not already defined)
+### 1) Define a namespace for you Application if you have not already done so
+
+### 2) Add Minecraft Repo
 
     Select App & Marketplace -> Chart Repositories
 <img src="../../assets/Rancher-ChangetoApps.gif" width="500">
 
 
-### 2) Click Create to define a new Chart Repository
+### 3) Click Create to define a new Chart Repository
     
     Name: minecraft
     Index url: https://itzg.github.io/minecraft-server-charts/
@@ -31,16 +47,17 @@ In this lab we are going to install and configure  Minecraft with the option to 
 You should now see the Minecraft Repo
 
 
-### 3) Select Charts - You should now see Minecraft as an available Chart
+### 4) Select Charts - You should now see Minecraft as an available Chart
 
 <img src="../../assets/Deploy-Minecraft-1-app.png" width="400">
 
 
-### 4) Config and Deploy PVC for Minecraft 
+### 5) Config and Deploy Minecraft 
 
+
+Click on Install in the upper right to start the install
 
 Click on Values YAML and change/add at a Minimum, change the following items
-
 
 
 ``` 
@@ -70,11 +87,6 @@ resources:
 
 <img src="../../assets/Deploy-Minecraft-2-installHelm.png" width="800">
 
-### 5) Config and Deploy PVC for Minecraft 
-
-
-Click on Values YAML and change/add the following items
-
 
 ### 6) Press Install and watch it deploy
 
@@ -86,49 +98,94 @@ Click on Values YAML and change/add the following items
 
 <img src="../../assets/Deploy-Minecraft-4-service.gif" width="900">
 
-# Install Minecraft with NFS PVC
+## Add a custom World
 
-### 1) Check to verify you have a pvc is the namespace you are planning on deploying in
-
-```
-kubectle get pvc -A
-```
-
-Example
-```
-NAMESPACE   NAME       STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
-default     nfsclaim   Bound    pvc-22295e73-9a25-4b5c-9546-3ec43ba1e23c   10Mi       RWO            nfs            95m
-```
+Custom Worlds are stored as zip files and need to be easily downloaded by the pod on launch (I.E. http://server.xyz.com/MyCoolWorld.zip)
 
 
+### 1) Find a World you want to install and keep it in it's original zip format
 
-### 2) Install Minecraft w/ a pvc Enabled
+    Checkout http://www.planetminecraft.com
+
+         *Make sure you download only Java versions
+
+### 2) Save the zip to location that the pod can easily download from
+    http://server.xyz.com/MyCoolWorld.zip
+
+### 3) Follow the steps above to install the Java edition
+When editing the Values.yaml (Step 5) add the following value
+
+    sa
+
+### 4) when editing the 
+ 
+# Install Minecraft Bedrock Edition
+
+### 1) Define a namespace for you Application if you have not already done so
+
+### 2) Add Minecraft Repo
+
+    Select App & Marketplace -> Chart Repositories
+<img src="../../assets/Rancher-ChangetoApps.gif" width="500">
 
 
-Click on Values YAML and change/add the following items
+### 3) Click Create to define a new Chart Repository
+    
+    Name: minecraft
+    Index url: https://itzg.github.io/minecraft-server-charts/
+    
+<img src="../../assets/Rancher-addHelmRepo-Minecraft.gif" width="800">
+
+You should now see the Minecraft Repo
+
+
+### 4) Select Charts - You should now see Minecraft as an available Chart
+
+<img src="../../assets/Deploy-Minecraft-1-app.png" width="400">
+
+
+### 5) Config and Deploy Minecraft 
+
+
+Click on Install in the upper right to start the install
+
+Click on Values YAML and change/add at a Minimum, change the following items
+
 
 ``` 
+minecraftServer:
+    eula: 'TRUE'
+    motd: Welcome to Minecraft on Kubernetes!
+  rcon:
+    enabled: true
+    password: CHANGEME!
+    serviceType: LoadBalancer
+  serviceType: LoadBalancer
 
 persistence:
-  config:
-    enabled: enable
-    mountPath: /data
-    type: pvc
-    existingClaim: nfsclaim
-  music:
-    enabled: enable
-    mountPath: /music
-    type: custom
-    volumeSpec:
-      nfs:
-        server: node-6.wiredquill.com
-        path: /share/music 
-    
-service:
-  main:
-  type: LoadBalancer
-    ports:
-      http:
-        port: 4533
+  annotations: {}
+  dataDir:
+    Size: 1Gi
+    enabled: true
+
+resources:
+  requests:
+    cpu: 1000m
+    memory: 1024Mi
+
         
 ```
+      
+
+<img src="../../assets/Deploy-Minecraft-2-installHelm.png" width="800">
+
+
+### 6) Press Install and watch it deploy
+
+<img src="../../assets/Deploy-Minecraft-3-deployed.png" width="900">
+
+### 7) Locate the Minecraft Service
+
+    Cluster Explorer -> Services
+
+<img src="../../assets/Deploy-Minecraft-4-service.gif" width="900">
