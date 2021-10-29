@@ -1,6 +1,6 @@
 ## Install Navidrome with an nfs mount to your music collection
 
-In this lab we are going to install and configure Naidrome Media Streamer. 
+In this lab we are going to install and configure Navidrome Media Streamer. 
 
 We will configure nfs to mount your music collection /music within the pod
 
@@ -20,7 +20,7 @@ Optionally you can configure the database to be stored on nfs via the NFS Provis
       * NFS Client install on all Kubernetes Nodes
             *test nfs mount on ever node
 
-# Install Naivdrome
+# Install Navidrome
 
 ### 1) Add k8s-at-home Repo (if not already defined)
 
@@ -85,7 +85,7 @@ service:
 
 <img src="../../assets/Deploy-Navidrome-4-service.gif" width="900">
 
-# Install Naivdrome with NFS PVC
+# Install Navidrome with NFS PVC
 
 ### 1) Check to verify you have a pvc is the namespace you are planning on deploying in
 

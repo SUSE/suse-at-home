@@ -8,7 +8,7 @@ In this lab we are going to install and configure  Minecraft with the option to 
 We are assuming you are running the Equivalent to the SUSE at Home Base which includes the following:
 
      * Rancher 2.5+ or 2.6+
-     * Kubernetes Cluster
+     * Kubernetes Cluster (k3s)
         LoadBalancer - Metallb
 
       * Persistent Storage 
@@ -42,7 +42,7 @@ https://www.thegamer.com/minecraft-bedrock-vs-java-comparison/
     Name: minecraft
     Index url: https://itzg.github.io/minecraft-server-charts/
     
-<img src="../../assets/Rancher-addHelmRepo-Minecraft.gif" width="800">
+<img src="../../assets/Rancher-addHelmRepo-Minecraft.png" width="400">
 
 You should now see the Minecraft Repo
 
@@ -57,7 +57,9 @@ You should now see the Minecraft Repo
 
 Click on Install in the upper right to start the install
 
-Click on Values YAML and change/add at a Minimum, change the following items
+<img src="../../assets/Deploy-Minecraft-2-install-button.gif" width="800">
+
+### 5) Change the following items
 
 
 ``` 
@@ -71,7 +73,6 @@ minecraftServer:
   serviceType: LoadBalancer
 
 persistence:
-  annotations: {}
   dataDir:
     Size: 1Gi
     enabled: true
@@ -83,22 +84,28 @@ resources:
 
         
 ```
-      
-
-<img src="../../assets/Deploy-Minecraft-2-installHelm.png" width="800">
 
 
-### 6) Press Install and watch it deploy
+### 6) Press Install and watch the Deployment run
 
-<img src="../../assets/Deploy-Minecraft-3-deployed.png" width="900">
+### 7) Watch the Minecraft Pod's log to see the World being built
+
+<img src="../../assets/Deploy-Minecraft-5-log.gif" width="900">
 
 ### 7) Locate the Minecraft Service
 
     Cluster Explorer -> Services
 
-<img src="../../assets/Deploy-Minecraft-4-service.gif" width="900">
+<img src="../../assets/Deploy-Minecraft-6-Service.gif" width="900">
 
-## Add a custom World
+### 8) Configure and launch Client
+
+From the Minecraft Client Select **Multiplayer** and enter the IP address of the Minecraft Service you just created.
+
+<img src="../../assets/Deploy-Minecraft-8-Client-to-Server.gif" width="900">
+
+
+# Add a custom World
 
 Custom Worlds are stored as zip files and need to be easily downloaded by the pod on launch (I.E. http://server.xyz.com/MyCoolWorld.zip)
 
@@ -115,33 +122,13 @@ Custom Worlds are stored as zip files and need to be easily downloaded by the po
 ### 3) Follow the steps above to install the Java edition
 When editing the Values.yaml (Step 5) add the following value
 
-    sa
+    minecraftServer:
+      downloadWorldUrl: http://server.xyz.com/MyCoolWorld.zip
 
-### 4) when editing the 
  
 # Install Minecraft Bedrock Edition
 
-### 1) Define a namespace for you Application if you have not already done so
-
-### 2) Add Minecraft Repo
-
-    Select App & Marketplace -> Chart Repositories
-<img src="../../assets/Rancher-ChangetoApps.gif" width="500">
-
-
-### 3) Click Create to define a new Chart Repository
-    
-    Name: minecraft
-    Index url: https://itzg.github.io/minecraft-server-charts/
-    
-<img src="../../assets/Rancher-addHelmRepo-Minecraft.gif" width="800">
-
-You should now see the Minecraft Repo
-
-
-### 4) Select Charts - You should now see Minecraft as an available Chart
-
-<img src="../../assets/Deploy-Minecraft-1-app.png" width="400">
+### 1) Follow All the Steps above for the Java Edition but substitute Step 5 Below
 
 
 ### 5) Config and Deploy Minecraft 
@@ -154,12 +141,7 @@ Click on Values YAML and change/add at a Minimum, change the following items
 
 ``` 
 minecraftServer:
-    eula: 'TRUE'
-    motd: Welcome to Minecraft on Kubernetes!
-  rcon:
-    enabled: true
-    password: CHANGEME!
-    serviceType: LoadBalancer
+  eula: 'TRUE'
   serviceType: LoadBalancer
 
 persistence:
@@ -176,16 +158,3 @@ resources:
         
 ```
       
-
-<img src="../../assets/Deploy-Minecraft-2-installHelm.png" width="800">
-
-
-### 6) Press Install and watch it deploy
-
-<img src="../../assets/Deploy-Minecraft-3-deployed.png" width="900">
-
-### 7) Locate the Minecraft Service
-
-    Cluster Explorer -> Services
-
-<img src="../../assets/Deploy-Minecraft-4-service.gif" width="900">

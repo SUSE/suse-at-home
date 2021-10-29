@@ -36,7 +36,7 @@ Install K3s on Raspberry Pi
     (RKE or K3s) and Rancher 
     
     This is where you should start...even if you have SLES install just look.
-    Make sure you have the proper packages intalled and enabled, turn off or 
+    Make sure you have the proper packages installed and enabled, turn off or 
     open up the firewall and make sure you setup the ssh-keys.
 
 ### Install SLES
@@ -122,9 +122,13 @@ ads, malware, malvertising, etc.
 
 <a href="deployments/MQTT">MQTT</a> - Simple, light weight publish/subscribe message bus
 
-<a href="deployments/NodeRed">NodeRed</a> - Browser based Development Enviroment that make it easy to connect various 
+<a href="deployments/NodeRed">NodeRed</a> - Browser based Development Environment that make it easy to connect various 
 things together
 
 <a href="deployments/InstallM5Stick">Install M5Stick</a> - Configuration and tools to setup your M5Stick
 
-<a href="deployments/Navidrome">Install Novidrome</a> - Personal Media Server for stream audio
+<a href="deployments/Navidrome">Install Navidrome</a> - Personal Media Server for stream audio
+
+<a href="deployments/Minecraft">Install Minecraft</a> - Prepare for an adventure of limitless possibilities as you build, mine, battle mobs, and explore the ever-changing Minecraft landscape
+
+<a href="deployments/Valheim">Install Valheim</a> - Valheim is an upcoming survival and sandbox video game by the Swedish developer Iron Gate Studio - Requires a Steam Lic
