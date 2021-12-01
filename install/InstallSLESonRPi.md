@@ -1,30 +1,30 @@
-# Installing SLES 15 SP2 on Raspberry Pi
+# Installing SLES 15 SP3 on Raspberry Pi
 
 ### At the end of the Lab you will have:
-* Raspberry Pi 4 running SLES 15 SP2
+* Raspberry Pi 4 running SLES 15 SP3
 
 
-The <a href="https://documentation.suse.com/sles/15-SP2/single-html/SLES-rpi-quick/#sec-rpi-platform">SUSE Documentation for the RaspberryPi Quickstart</a> is another awesome doc to get SLES running on the Pi
+The <a href="https://documentation.suse.com/sles/15-SP3/single-html/SLES-rpi-quick/#sec-rpi-platform">SUSE Documentation for the Raspberry Pi Quickstart</a> is another awesome doc to get SLES running on the Pi
 
 #### Prerequisite
 Suggest:
  - Raspberry Pi 4 w/ 8gb Ram
- - SD Card
+ - Micro SD Card
  - Optional USB 3 boot drive
 
-# Download SLES 15 SP2 for ARM
+# Download SLES 15 SP3 for Raspberry Pi (Arm)
 
-### 1) Download the file SLES15-SP2-JeOS.aarch64-15.2-RaspberryPi-QU1.raw.xz from the link below
+### 1) Download the file SLES15-SP3-JeOS.aarch64-15.3-RaspberryPi-GM.raw.xz from the link below - make sure you choose Stable Release 15 SP3 and Architecture Arm
 
-<a href="https://scc.suse.com/admin/products/1936">Download SLES and copy a registration code</a>
+<a href="https://www.suse.com/download/sles/">Download SLES and copy a registration code</a>
 
-# Burning the image to an SDCard
+# Burning the image to a micro SD Card
 
-You will need to burn this image to the SDcard.
+You will need to burn this image to the micro SD card.
 
 ## For Linux
 
-### 1) Find  your SDcard by using the lsblk command
+### 1) Find  your micro SD card by using the lsblk command
 ```
 lsblk
 ```
@@ -37,7 +37,7 @@ Example
  In this example I'm using /dev/mmcblk0
 
 ```
-xz -cd SLES15-SP2-JeOS.aarch64-15.2-RaspberryPi-QUI.raw.xz | sudo dd of=/dev/mmcblk0 bs=4096 iflag=fullblock status=progress
+xz -cd SLES15-SP3-JeOS.aarch64-15.3-RaspberryPi-GM.raw.xz | sudo dd of=/dev/mmcblk0 bs=4096 iflag=fullblock status=progress
 ```
 
 ## For Windows
@@ -48,20 +48,20 @@ xz -cd SLES15-SP2-JeOS.aarch64-15.2-RaspberryPi-QUI.raw.xz | sudo dd of=/dev/mmc
 <a href="http://sourceforge.net/projects/win32diskimager/">Win32 Disk Imager</a>
 
 
-### 2) Use 7-zip to uncompress SLES15-SP2-JeOS.aarch64-15.2-RaspberryPi-QU1.raw.xz
+### 2) Use 7-zip to uncompress SLES15-SP3-JeOS.aarch64-15.3-RaspberryPi-GM.raw.xz
 ### 3) Use Win32 Disk Imager to write the uncomressed image to the SDcard
 
 ## For Mac OSx
 
 ### 1) Use the tool available here:
-<a href="https://downloads.raspberrypi.org/imager/imager_1.4.dmg">Raspian Image Burner</a>
+<a href="https://downloads.raspberrypi.org/imager/imager_1.6.2.dmg">Raspberry Pi Imager</a>
 
-### 2) Burn image to SDcard
+### 2) Burn image to micro SD card
 
 
 *If you need additional help use the link below:
 
-<a href="https://documentation.suse.com/sles/15-SP2/html/SLES-rpi-quick/art-rpiquick.html">Raspberry Pi on SLES</a>
+<a href="https://documentation.suse.com/sles/15-SP3/html/SLES-rpi-quick/art-rpiquick.html">SLES for Arm on Raspberry Pi</a>
 
 # SLES First Boot
 
@@ -82,7 +82,7 @@ The System will now reboot
 
 
 ```
-Welcome to SUSE Linux Enterprise Server 15 SP2
+Welcome to SUSE Linux Enterprise Server 15 SP3
 
 eth01: 10.0.9.1 fe80::dea6:32ff:febb"6ffa
 wlan0:
@@ -109,14 +109,14 @@ Using E-Mail: ###@###.com
 
 Announcing system to https://scc.suse.com ...
 
-Activating SLES 15.2 aarch64 ...
+Activating SLES 15.3 aarch64 ...
 -> Adding service to system ...
 
-Activating sle-module-basesystem 15.2 aarch64 ...
+Activating sle-module-basesystem 15.3 aarch64 ...
 -> Adding service to system ...
 -> Installing release package ...
 
-Activating sle-module-server-applications 15.2 aarch64 ...
+Activating sle-module-server-applications 15.3 aarch64 ...
 -> Adding service to system ...
 -> Installing release package ...
 
