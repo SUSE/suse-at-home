@@ -105,7 +105,7 @@ zypper in -y -t pattern yast2_basis
 
 ### 3) Install additional software we will need to the Labs
 ```
-zypper in -y sudo nmap docker wget iputils vim
+zypper in -y sudo nmap docker wget iputils vim apparmor-parser
 ```
 
 ### 4) Start and Test Docker service

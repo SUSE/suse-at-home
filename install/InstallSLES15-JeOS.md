@@ -46,7 +46,7 @@ SUSEConnect -p sle-module-containers/15.2/x86_64
 
 ```
 zypper -n in -t pattern yast2_basis
-zypper -n in sudo wget docker which vim iputils kernel-default
+zypper -n in sudo wget docker which vim iputils kernel-default apparmor-parser
 ```
 ### 10) Disable firewall?
 ```
