@@ -50,6 +50,9 @@ Install K3s on Raspberry Pi
 - <a href="install/InstallSLE15-JeOS-KVM-Cloud-init.md">Setup cloud-init for KVM installs</a>
 - <a href="https://github.com/zoopster/junk/tree/master/tf-sles15-cloudinit">Terraform install of SLES on KVM</a>
 
+- <a href="install/Install-Slemicro-K3S-onRPi.md">Airgap deployment of K3S on SLE Micro 5.1 on Raspberry Pi 4</a>
+
+
 ### Install Kubernetes Tools   
 * <a href="install/InstallKubernetesTools.md">Installation of Kubernetes  Tools</a> 
 
