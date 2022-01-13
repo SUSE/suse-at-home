@@ -20,7 +20,7 @@
 
 
 ### 2) Click Add Cluster
-        * The current context is shown in the upper left, and should say 'Global'
+        * The current context is shown in the upper left, and should say 'Global'.
         * Note the multiple types of Kubernetes cluster Rancher supports. We will be using Custom for this lab, but there are a lot of possibilities with Rancher.
 <img src="../assets/Core-Lab-InstallRKEfromRancher-2-Add-Cluster.png" width="600">
 
