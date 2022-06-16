@@ -1,0 +1,17 @@
+#region
+cluster_count = "1"
+#k3s_channel
+ssh_id = "~/.ssh/id_rsa.pub"
+#ubuntu
+#aws_ami = "ami-000482408ca8ca662"
+#suse chost sle15sp3
+aws_ami = "ami-029b9bac98b618b71" 
+#amazon linux
+#aws_ami = "amzn2-ami-kernel-5.10-hvm-2.0.20220218.1-x86_64-gp2"
+# ubuntu20.04lts
+#aws_ami = "ami-01896de1f162f0ab7"
+aws_az = "us-east-1a"
+aws_vpc_security_groups = "sg-for your vpc"
+aws_subnet_id = "subnet-for your vpc subnet"
+#root_disk_size = "50"
+#aws_instance_type = "t3.xlarge"
