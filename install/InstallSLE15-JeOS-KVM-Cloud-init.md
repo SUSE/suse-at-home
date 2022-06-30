@@ -1,7 +1,7 @@
 # Setup cloud-init for KVM
 
 ### At the end of the Lab you will have:
-- SLE 15 SP2 JeOS Instance running under KMV
+- SLE 15 SP2 JeOS Instance running under KVM
 
 # Install SLE
 
