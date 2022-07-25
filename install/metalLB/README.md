@@ -9,28 +9,28 @@ At the end of the Lab you will have:
 - K3s - traefik and klipper (servicelb) disabled (see below for instructions)
 
 
-### K3s Installs Traefik 1.8) by default.  You can stop Traefik from installing with '--disable=traefik' during your k3s install or delete the helm deployment. You also need to disable the service loadbalancer (klipper) using '--disable=servicelb'
+> K3s Installs Traefik 1.8) by default.  You can stop Traefik from installing with '--disable=traefik' during your k3s install or delete the helm deployment. You also need to disable the service loadbalancer (klipper) using '--disable=servicelb'
   
   For Example 
-
-    curl -sfL https://get.k3s.io | K3S_KUBECONFIG_MODE=0644 sh -s - --disable=traefik --disable=servicelb
-
+```
+curl -sfL https://get.k3s.io | K3S_KUBECONFIG_MODE=0644 sh -s - --disable=traefik --disable=servicelb
+```
 
 # Install MetalLB     
 
 
 ### 1) Create a namespace for Metal LB
-```
+```console
 kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.10.2/manifests/namespace.yaml
 ```
 
 ### 2) Create a metallb-config.yaml file
-Ensure the addresses match the available addresses in your configuration
-Edit or create a metallb-config.yml with the following entries
+Ensure the addresses match the available addresses in your configuration.
+Edit or create a `metallb-config.yaml` with the following entries
 
-*Note this example will give the addresses 10.0.0.100-120 to the LoadBalancer
+*Note this example will give the addresses `10.0.0.100-120` to the LoadBalancer
 
-```
+```yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -74,19 +74,20 @@ deployment.apps/controller created
 # Testing Metal LB
 
 ### 1) Deploy whoami app using Metallb
-```
-kubectl apply -f whoami-deploy.yaml
+```console
+kubectl apply -f https://raw.githubusercontent.com/SUSE/suse-at-home/main/install/metalLB/whoami-deploy.yaml
 ```
 
 ### 2) Locate the IP of the whoami service
 
-```
-kubectl get svc -A
+```console
+kubectl get svc -n who
 ```
 
 Example
 ```
-who    whoami  LoadBalancer   10.43.21.89     10.0.0.100   80:31247/TCP
+NAME     TYPE           CLUSTER-IP     EXTERNAL-IP    PORT(S)        AGE
+whoami   LoadBalancer   10.43.21.89    10.0.0.100     80:31247/TCP   21m
 ```
 
 ### 3) Test whoami App
