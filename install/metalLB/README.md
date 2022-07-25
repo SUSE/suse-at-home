@@ -113,3 +113,10 @@ Accept-Language: en-us
 Connection: keep-alive
 Upgrade-Insecure-Requests: 1
 ```
+
+
+### 4) Clean Up
+
+```console
+kubectl delete -f https://raw.githubusercontent.com/SUSE/suse-at-home/main/install/metalLB/whoami-deploy.yaml
+```
