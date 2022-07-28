@@ -77,7 +77,7 @@ kubectl apply -f metallb-config.yaml
 ### 3) Announce the service IPs
 The last step is to configure how MetalLB annouces the service. The simplest method is is to respond to ARP requests.   
 Make sure `spec.ipAddressPools` selector selects the correct IPAddressPool resource.
-[Read more](https://metallb.universe.tf/configuration/) about diffrent ways announce service IP.
+[Read more](https://metallb.universe.tf/configuration/#announce-the-service-ips) about diffrent ways announce service IP.
 
 ```yaml
 apiVersion: metallb.io/v1beta1
