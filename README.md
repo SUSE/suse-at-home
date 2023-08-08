@@ -92,7 +92,7 @@ Install K3s on Raspberry Pi
 
 ### Networking
 
-   <a href="install/metalLB/README.md">Install and Configure MetalLB (on k3s)</a> - LoadBalancer that allows you to define a pool(s) of local IP addresses that can be automatically assigned/used by Applications deployed in Kubernetes 
+   <a href="install/metalLB">Install and Configure MetalLB</a> - LoadBalancer that allows you to define a pool(s) of local IP addresses that can be automatically assigned/used by Applications deployed in Kubernetes 
 
    <a href="install/traefik/README.md">Install and configure Traefik (on k3s)</a> - This lab will show you how to create different type of Ingress rules using a few different sample applications
 
